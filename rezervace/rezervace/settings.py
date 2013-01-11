@@ -105,9 +105,7 @@ ROOT_URLCONF = 'rezervace.urls'
 WSGI_APPLICATION = 'rezervace.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+	'/home/lubos/weby/rezervace/templates'
 )
 
 INSTALLED_APPS = (
@@ -119,6 +117,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'django.contrib.gis',
     'katalog'
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
