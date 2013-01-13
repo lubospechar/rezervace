@@ -25,11 +25,14 @@ class FotografieInline(admin.TabularInline):
 	model = Fotografie
 
 
-class RezervaceAdmin(admin.OSMGeoAdmin):
+#class RezervaceAdmin(admin.OSMGeoAdmin):
+class RezervaceAdmin(admin.ModelAdmin):
 	inlines = [
 		PoznamkyInline,
 		FotografieInline,
 	]
+	list_display = ('nazev', 'kod', 'status')
+	list_filter = ['status', 'okres']
 	
 	prepopulated_fields = {"slug": ("nazev",)}
 

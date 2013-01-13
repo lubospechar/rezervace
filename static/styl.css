@@ -1,0 +1,53 @@
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #aaaaaa;
+    padding: 5px 7px 5px 7px;
+}
+
+th {
+    background: #33CCFF;
+    font-family: arial;
+    font-size: 13px;
+}
+
+td {
+    font-family: tahoma;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+span {
+    padding-bottom: 2px;
+}
+
+.nafoceno {
+    min-width: 110px;
+}
+
+.mapy {
+    min-width: 130px;
+}
+
+.nafoceno p {
+    padding: 1px 3px 1px 3px;
+    margin: 0px 0px 2px 0px;
+}
+
+.cervena {
+    background: #ff9d4e;
+}
+
+.zluta {
+    background: #feff7d;
+}
+
+.zelena {
+    background: #46ff38;
+}
+
+.radek2 {
+    background: #f7f7ff;
+}

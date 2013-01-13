@@ -1,9 +1,11 @@
 # coding: utf-8
 from django.contrib.gis.db import models
+from django.db.models import Sum
+
 from django.contrib.auth.models import User
 
 class Kraj(models.Model):
-	nazev = models.CharField(max_length=25, unique=True)
+	nazev = models.CharField(max_length=25, unique=True, verbose_name="Název")
 	slug = models.SlugField(unique=True)
 	
 	def __unicode__(self):
@@ -15,7 +17,7 @@ class Kraj(models.Model):
 		ordering = ["nazev",]
 		
 class Okres(models.Model):
-	nazev = models.CharField(max_length=35, unique=True)
+	nazev = models.CharField(max_length=35, unique=True, verbose_name="Název")
 	kraj = models.ForeignKey(Kraj)
 	slug = models.SlugField(unique=True)
 	
@@ -28,70 +30,89 @@ class Okres(models.Model):
 		ordering = ["nazev",]
 		
 class Obdobi(models.Model):
-	obdobi = models.CharField(max_length=40, unique=True)
+	obdobi = models.CharField(max_length=40, unique=True, verbose_name="Období")
+	poradi = models.IntegerField(verbose_name="Logické pořadí")
 
 	def __unicode__(self):
 		return self.obdobi
-
+	    
 	class Meta:
 		verbose_name = "Období"
 		verbose_name_plural = "Období"
-		ordering = ["obdobi",]
+		ordering = ["poradi"]
 
 
 class Status(models.Model):
-	status = models.CharField(max_length=100)
-	zkratka = models.CharField(max_length=10)
+	status = models.CharField(max_length=100, verbose_name="Status")
+	zkratka = models.CharField(max_length=10, verbose_name="Zkratka")
 	slug = models.SlugField(unique=True)
 	
 	def __unicode__(self):
-		return self.status
+		return self.zkratka
 	
 	class Meta:
 		verbose_name = "Status"
-		verbose_name_plural = "Statuty"
+		verbose_name_plural = "Statusy"
 		ordering = ["status",]
 
+class Fotografie(models.Model):
+	obdobi = models.ForeignKey(Obdobi, verbose_name="Období")
+	pocet = models.IntegerField(default=0, verbose_name="Počet fotografií za období")
+	rezervace = models.ForeignKey('Rezervace', verbose_name="Rezervace")
+	
+	def __unicode__(self):
+		return u'%s: %s' % (self.obdobi, self.pocet)
+	    
+	def barva(self):
+		if self.pocet == 0:
+		    return 'cervena'
+		elif self.pocet < 8:
+		    return 'zluta'
+		else:
+		    return 'zelena'
+	
+	class Meta:
+		verbose_name = "Fotografie"
+		verbose_name_plural = "Fotografie"
+		ordering = ["obdobi",]
+
+
 class Rezervace(models.Model):
-	nazev = models.CharField(max_length=100)
+	kod = models.IntegerField(verbose_name="Kód")
+	nazev = models.CharField(max_length=100, verbose_name="Název")
 	slug = models.SlugField(unique=True)
-	status = models.ForeignKey(Status)
-	predmet = models.TextField(null=True, blank=True)
-	stred = models.PointField()
-	wikipedia = models.URLField(null=True, blank=True)
-	commons = models.URLField(null=True, blank=True)
-	okres = models.ForeignKey(Okres)
-	uprava = models.DateTimeField()
+	status = models.ForeignKey(Status, verbose_name="Status")
+	predmet = models.TextField(null=True, blank=True, verbose_name="Předmět ochrany")
+	stred = models.PointField(verbose_name="Přibližný střed")
+	wikipedia = models.URLField(null=True, blank=True, verbose_name="Odkaz na wikipedii")
+	commons = models.URLField(null=True, blank=True, verbose_name="Odkaz na commons")
+	okres = models.ManyToManyField(Okres, verbose_name="Okres", null=False, blank=False)
+	uprava = models.DateTimeField(auto_now=True, verbose_name="Ṕoslední úprava položky")
 	objects = models.GeoManager()
 	
 	def __unicode__(self):
 		return self.nazev
+	
+	def celkovy_pocet_fotografii(self):
+	    pocet = Fotografie.objects.filter(rezervace = self.pk).aggregate(Sum('pocet'))
+	    return pocet['pocet__sum']
 	
 	class Meta:
 		verbose_name = "Rezervace"
 		verbose_name_plural = "Rezervace"
 		ordering = ["nazev",]
 
-class Fotografie(models.Model):
-	obdobi = models.ForeignKey(Obdobi)
-	pocet = models.IntegerField(default=0)
-	rezervace = models.ForeignKey(Rezervace)
-	
-	def __unicode__(self):
-		return '%s: %s' % (self.obdobi, self.pocet)
-	
-	class Meta:
-		verbose_name = "Fotografie"
-		verbose_name_plural = "Fotografie"
 	
 class Poznamky(models.Model):
 	poznamka = models.CharField(max_length=255)
-	rezervace = models.ForeignKey(Rezervace)
-	uzivatel = models.ForeignKey(User)
-	datum = models.DateTimeField()
+	rezervace = models.ForeignKey(Rezervace, verbose_name="Rezervace")
+	uzivatel = models.ForeignKey(User, verbose_name="Uživatel")
+	datum = models.DateTimeField(auto_now=True, verbose_name="Datum")
 	
 	class Meta:
 		verbose_name = "Poznámka"
 		verbose_name_plural = "Poznámky"
 		ordering = ["datum",]
 	
+	def __unicode__(self):
+	  return u'%s - %s' % (self.datum, self.uzivatel)
