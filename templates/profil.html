@@ -36,8 +36,8 @@
 	<tr>
 		<th>Mapy</th><td>
 		<p>
-			<a href="http://mapy.cz/#x={{ profil.stred.x|safe }}&amp;y={{ profil.stred.y|safe }}&amp;z=14&amp;l=16">Turistická (seznam)</a>,
-			<a href="http://mapy.cz/#x={{ profil.stred.x|safe }}&amp;y={{ profil.stred.y|safe }}&amp;z=14&amp;l=15">Letecká (seznam)</a>
+			<a href="http://mapy.cz/#x={{ profil.stred.x|safe }}&amp;y={{ profil.stred.y|safe }}&amp;z=14&amp;l=16">Turistická (mapy.cz)</a>,
+			<a href="http://mapy.cz/#x={{ profil.stred.x|safe }}&amp;y={{ profil.stred.y|safe }}&amp;z=14&amp;l=15">Letecká (mapy.cz)</a>
 		</p>
 	</td>
 	</tr>
@@ -46,6 +46,11 @@
 	<tr>
 		<th>Stav nafotocení</th>
 		<td><p>{{ profil.stav }} %</p></td>
+	</tr>
+	
+	<tr>
+		<th>Celkem fotografií</th>
+		<td><p>{{ profil.celkovy_pocet_fotografii }}</td>
 	</tr>
 	
 	<tr>
@@ -72,9 +77,10 @@
 
 </table>
 
-<h3>Poznánky</h3>
+
 
 {% for poznamka in profil.poznamky_set.all %}
+{% if forloop.first %}<h3>Poznámky</h3>{% endif %}
 <p>{{ poznamka.poznamka }}</p>
 <p class="podpis">{{ poznamka.datum }} - {{ poznamka.uzivatel }}</p>
 {% endfor %}

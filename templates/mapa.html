@@ -4,34 +4,63 @@
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
-<script>
-$( document ).ready( function() {
-var data
-var success
-$.ajax({
-	dataType: "json",
-	url: {% url data %},
-	data: data,
-	success: success
-});
-
-alert(data)
-
-})
-
-</script>
-
     
 <script type="text/javascript">
 	function initialize() {
+		
+		function getIcon(color) {
+			return MapIconMaker.createMarkerIcon({width: 20, height: 34, primaryColor: color, cornercolor:color});
+		}
+		
+		var rezervace = {
+			{% for polozka in rezervace %}
+			{{ forloop.counter }}: {
+				'x': {{ polozka.stred.x|safe }},
+				'y': {{ polozka.stred.y|safe }},
+ 				'nazev': '{{ polozka.nazev }}',
+ 				'odkaz': '{% url profil polozka.slug %}',
+ 				'stav': {{ polozka.stav }},
+ 				'status': '{{ polozka.status.zkratka }}',
+ 				'barva': '{{ polozka.barva }}',
+			},
+		{% endfor %}
+		};
+		
+		var infowindow = new google.maps.InfoWindow();
+		
 		var mapOptions = {
 			center: new google.maps.LatLng(50, 15.5),
 			zoom: 7,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 		
+		
 		var map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
-      }
+		
+		var marker = new Array();
+		
+		for (var bod in rezervace) {
+			marker = new google.maps.Marker({
+ 				icon: {path: google.maps.SymbolPath.CIRCLE, scale: 7, fillOpacity: 6, fillColor: rezervace[bod]['barva'], strokeWeight: 0,},
+
+				position: new google.maps.LatLng(rezervace[bod]['y'],rezervace[bod]['x']),
+				title: rezervace[bod]['nazev'],
+			});
+		
+			google.maps.event.addListener(marker, 'click', (function(marker, bod) {
+				return function() {
+					infowindow.setContent(
+						'<div class="marker"><h1>' + rezervace[bod]['status'] + ' ' + rezervace[bod]['nazev'] + '</h1><p><b>Stav nafocení:</b> ' + rezervace[bod]['stav'] + ' %</p><p><a href="' + rezervace[bod]['odkaz'] + '">profil rezervace</a></p>');
+					infowindow.open(map, marker);
+				}
+			
+			}) (marker, bod));
+		
+			marker.setMap(map);
+		
+		}
+		
+	}
 
 
 

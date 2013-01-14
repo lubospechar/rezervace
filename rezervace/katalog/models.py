@@ -1,6 +1,10 @@
 # coding: utf-8
+import struct
+
+
 from django.contrib.gis.db import models
 from django.db.models import Sum
+
 
 from django.contrib.auth.models import User
 
@@ -104,6 +108,13 @@ class Rezervace(models.Model):
 			procento.append(polozka.stav())
 				
 		return int(sum(procento)/len(procento))
+	
+	def barva(self):
+		r = (255*(100-self.stav()))/100; 
+		g = (255*self.stav())/100
+		b = 0
+		
+		return '#%s' % (struct.pack('BBB', r, g, b).encode('hex'))
 				
 	
 	class Meta:
