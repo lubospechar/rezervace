@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block obsah %}
+
+<h1>{{profil.nazev}} ({{ profil.status.status }})</h1>
+<h2>Okres: {% for okres in profil.okres.all %} {{ okres }}{% if not forloop.last %},{% endif %} {% endfor %}</h2>
+
+<h3>Charakteristika</h3>
+<table>
+
+	<tr>
+		<th>Kód ÚSOP</th>
+		<td><p><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&SHOW_ONE=1&ID={{ profil.kod }}">{{ profil.kod }}</p></td>
+	</tr>
+
+	<tr>
+		<th>Předmět ochrany</th>
+		<td><p>{{ profil.predmet }}</p></td>
+	</tr>
+
+	<tr>
+		<th>Přibližný střed:</th>
+		<td><p>{{ profil.stred.y }}N {{ profil.stred.x }}E</p></td>
+	</tr>
+	
+	<tr>
+		<th>Wikipedia</th>
+		<td><p><a href="{{ profil.wikipedia }}">{{ profil.wikipedia}}</a></p></td>
+	</tr>
+	
+	<tr>
+		<th>Commons</th>
+		<td><p><a href="{{ profil.commons }}">{{ profil.commons}}</a></p></td>
+	</tr>
+	
+	<tr>
+		<th>Mapy</th><td>
+		<p>
+			<a href="http://mapy.cz/#x={{ profil.stred.x|safe }}&amp;y={{ profil.stred.y|safe }}&amp;z=14&amp;l=16">Turistická (seznam)</a>,
+			<a href="http://mapy.cz/#x={{ profil.stred.x|safe }}&amp;y={{ profil.stred.y|safe }}&amp;z=14&amp;l=15">Letecká (seznam)</a>
+		</p>
+	</td>
+	</tr>
+	
+	
+	<tr>
+		<th>Stav nafotocení</th>
+		<td><p>{{ profil.stav }} %</p></td>
+	</tr>
+	
+	<tr>
+		<th>Poslední úprava</th>
+		<td><p>{{ profil.uprava }}</p></td>
+	</tr>
+
+
+</table>
+
+<h3>Fotografie</h3>
+
+<table>
+
+<tr><th>Období</th><th>Počet</th><th>Limit</th><th>Stav</th></tr>
+{% for obdobi in profil.fotografie_set.all %}
+<tr>
+	<td><p>{{ obdobi.obdobi }}</p></td>
+	<td><p>{{ obdobi.pocet }}</p></td>
+	<td><p>{{ obdobi.obdobi.limit }}</p></td>
+	<td><p>{{ obdobi.stav }} %</p></td>
+</tr>
+{% endfor %}
+
+</table>
+
+<h3>Poznánky</h3>
+
+{% for poznamka in profil.poznamky_set.all %}
+<p>{{ poznamka.poznamka }}</p>
+<p class="podpis">{{ poznamka.datum }} - {{ poznamka.uzivatel }}</p>
+{% endfor %}
+
+
+{% endblock %}

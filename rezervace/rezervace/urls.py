@@ -7,6 +7,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'katalog.views.home', name='home'),
+    url(r'^mapa/', 'katalog.views.mapa', name='mapa'),
+    url(r'^data/', 'katalog.views.data', name='data'),
+    url(r'^rezervace/(?P<slug>[-\w]+)/$', 'katalog.views.profil', name='profil'),
     # url(r'^rezervace/', include('rezervace.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

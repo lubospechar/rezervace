@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block tabulka %}
+{% block obsah %}
 
 <table>
     <tr>
@@ -9,18 +9,15 @@
 	<th>název</th>
 	<th>okres</th>
 	<th>předmět ochrany</th>
-	<th>odkazy</th>
-	<th>nafoceno</th>
-	<th>odkaz na mapy</th>
-	<th>poznámky</th>
+	<th>stav</th>
     </tr>
     
     {% for polozka in rezervace %}    
     <tr class="{% cycle 'radek1' 'radek2' %}">
 	<td><p><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&SHOW_ONE=1&ID={{ polozka.kod }}">{{ polozka.kod }}</p></td>
-	<td><p>{{ polozka.status.status }}</p></td>
-	<td><p><strong>{{ polozka.nazev }}</strong> {{ polozka.celkovy_pocet_fotografii }}</p></td>
-	<td>
+	<td class="status"><p>{{ polozka.status.status }}</p></td>
+	<td class="nazev"><p><a href="{% url profil polozka.slug %}"><strong>{{ polozka.nazev }}</a></strong></p></td>
+	<td class="okres">
 	
 	{% for okres in polozka.okres.all %}
 	    <p>{{ okres }}</p>
@@ -28,31 +25,8 @@
 	
 	</td>
 	<td><p>{{ polozka.predmet }}</p></td>
-	<td>
-	    {%if polozka.wikipedia %}<p><a href="{{ polozka.wikipedia}}">wikipedia</a></p>{% endif %}
-	    {%if polozka.commons %}<p><a href="{{ polozka.commons }}">commons</a></p>{% endif %}
-	</td>
-	<td class="nafoceno">
+	<td class="stav"><p>{{ polozka.stav }} %</p></td>
 
-	    
-	    {% for obdobi in polozka.fotografie_set.all %}
-	    
-	    <p class="{{ obdobi.barva }}">{{ obdobi.obdobi }}: {{ obdobi.pocet }}</p>
-	    {% endfor %}
-	
-	</td>
-	<td class="mapy">
-	    <p><a href="http://mapy.cz/#x={{ polozka.stred.x|safe }}&amp;y={{ polozka.stred.y|safe }}&amp;z=14&amp;l=16">Turistická (seznam)</a></p>
-	    <p><a href="http://mapy.cz/#x={{ polozka.stred.x|safe }}&amp;y={{ polozka.stred.y|safe }}&amp;z=14&amp;l=15">Letecká (seznam)</a></p>
-	</td>
-	<td>
-	
-	    {% for poznamka in polozka.poznamky_set.all %}
-		<p>{{ poznamka.poznamka }}<br />
-		{{ poznamka.uzivatel }} - {{ poznamka.datum }}</p>
-	    {% endfor %}
-	
-	</td>
     </tr>    
     {% endfor %}
     

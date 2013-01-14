@@ -14,40 +14,35 @@ th {
 }
 
 td {
-    font-family: tahoma;
-    font-size: 12px;
-    vertical-align: top;
+/*     vertical-align: top; */
 }
 
-span {
-    padding-bottom: 2px;
+p {
+	font-family: tahoma;
+	font-size: 12px;
+	margin: 0px 0px 0px 0px;
 }
 
-.nafoceno {
-    min-width: 110px;
+.status, .nazev, .okres {
+    min-width: 180px;
 }
 
-.mapy {
-    min-width: 130px;
+.stav {
+	min-width: 40px;
 }
 
-.nafoceno p {
-    padding: 1px 3px 1px 3px;
-    margin: 0px 0px 2px 0px;
-}
-
-.cervena {
-    background: #ff9d4e;
-}
-
-.zluta {
-    background: #feff7d;
-}
-
-.zelena {
-    background: #46ff38;
-}
 
 .radek2 {
     background: #f7f7ff;
 }
+
+.podpis {
+	padding: 6px 0px 15px 30px;
+}
+
+#mapa {
+	width: 800px;
+	height: 600px;
+}
+
+

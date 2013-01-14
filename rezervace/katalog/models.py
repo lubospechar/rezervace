@@ -32,6 +32,7 @@ class Okres(models.Model):
 class Obdobi(models.Model):
 	obdobi = models.CharField(max_length=40, unique=True, verbose_name="Období")
 	poradi = models.IntegerField(verbose_name="Logické pořadí")
+	limit = models.IntegerField(verbose_name="Nutný počet fotografií")
 
 	def __unicode__(self):
 		return self.obdobi
@@ -62,14 +63,12 @@ class Fotografie(models.Model):
 	
 	def __unicode__(self):
 		return u'%s: %s' % (self.obdobi, self.pocet)
-	    
-	def barva(self):
-		if self.pocet == 0:
-		    return 'cervena'
-		elif self.pocet < 8:
-		    return 'zluta'
+	
+	def stav(self):
+		if self.pocet >= self.obdobi.limit:
+			return 100
 		else:
-		    return 'zelena'
+			return int(float(self.pocet)/float(self.obdobi.limit)*100)
 	
 	class Meta:
 		verbose_name = "Fotografie"
@@ -87,15 +86,25 @@ class Rezervace(models.Model):
 	wikipedia = models.URLField(null=True, blank=True, verbose_name="Odkaz na wikipedii")
 	commons = models.URLField(null=True, blank=True, verbose_name="Odkaz na commons")
 	okres = models.ManyToManyField(Okres, verbose_name="Okres", null=False, blank=False)
-	uprava = models.DateTimeField(auto_now=True, verbose_name="Ṕoslední úprava položky")
+	uprava = models.DateTimeField(auto_now=True, verbose_name="Poslední úprava položky")
 	objects = models.GeoManager()
 	
 	def __unicode__(self):
 		return self.nazev
 	
 	def celkovy_pocet_fotografii(self):
-	    pocet = Fotografie.objects.filter(rezervace = self.pk).aggregate(Sum('pocet'))
+	    pocet = self.fotografie_set.all().aggregate(Sum('pocet'))
 	    return pocet['pocet__sum']
+	
+	def stav(self):
+		fotografie = self.fotografie_set.all()
+		
+		procento = list()
+		for polozka in fotografie:
+			procento.append(polozka.stav())
+				
+		return int(sum(procento)/len(procento))
+				
 	
 	class Meta:
 		verbose_name = "Rezervace"
