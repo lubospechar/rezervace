@@ -14,7 +14,7 @@
     
     {% for polozka in rezervace %}    
     <tr class="{% cycle 'radek1' 'radek2' %}">
-	<td><p><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&SHOW_ONE=1&ID={{ polozka.kod }}">{{ polozka.kod }}</p></td>
+	<td><p><a href="http://drusop.nature.cz/ost/chrobjekty/chrob_find/index.php?frame=1&amp;h_kod={{ polozka.kod }}">{{ polozka.kod }}</p></td>
 	<td class="status"><p>{{ polozka.status.status }}</p></td>
 	<td class="nazev"><p><a href="{% url profil polozka.slug %}"><strong>{{ polozka.nazev }}</a></strong></p></td>
 	<td class="okres">
