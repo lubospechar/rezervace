@@ -8,20 +8,22 @@ from katalog.models import Rezervace, Okres, Status
 
 def home(request):
 	okresy = Okres.objects.all()
-	rezervace = Rezervace.objects.all()
 	statusy = Status.objects.all()
+	rezervace = Rezervace.objects.all()
 	
-	if request.GET.get('okres'):
-		rezervace = rezervace.filter(okres = request.GET.get('okres'))
-		
-	if request.GET.get('status'):
-		rezervace = rezervace.filter(status = request.GET.get('status'))
+	if request.GET:
+		for pole in request.GET.dict():
+			kwargs = {pole: request.GET[pole]}
+			if pole == 'f_okres' or pole == 'f_status':
+				rezervace = rezervace.filter(**kwargs)
+	
 	
 	return render(request, 'home.html', 
 		{
 			'rezervace': rezervace,
 			'okresy': okresy,
 			'statusy': statusy,
+			'req': request.GET.dict()
 		}
 	)
 
