@@ -2,6 +2,23 @@
 
 {% block obsah %}
 
+<h1>Rezervace - Tabulka</h1>
+
+<h2>Filtr</h2>
+<h3>Okres</h3>
+<a href="{% url home %}">Vše</a>
+{% for okres in okresy %}
+	<a href="{% url home %}?okres={{ okres.pk }}">{{ okres }}</a>
+{% endfor %}
+
+<h3>Status</h3>
+<a href="{% url home %}">Vše</a>
+{% for status in statusy %}
+	<a href="{% url home %}?status={{ status.pk }}">{{ status }}</a>
+{% endfor %}
+
+
+<h2>Výsledky</h2>
 <table>
     <tr>
 	<th>kód</th>
@@ -25,7 +42,7 @@
 	
 	</td>
 	<td><p>{{ polozka.predmet }}</p></td>
-	<td class="stav"><p>{{ polozka.stav }} %</p></td>
+	<td class="stav" style="background: {{ polozka.barva }}"><p><strong>{{ polozka.stav }} %</strong></p></td>
 
     </tr>    
     {% endfor %}
