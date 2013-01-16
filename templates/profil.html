@@ -65,13 +65,13 @@
 
 <table>
 
-<tr><th>Období</th><th>Počet</th><th>Limit</th><th>Stav</th></tr>
-{% for obdobi in profil.fotografie_set.all %}
+<tr><th>Témata</th><th>Počet</th><th>Limit</th><th>Stav</th></tr>
+{% for tema in profil.fotografie_set.all %}
 <tr>
-	<td><p>{{ obdobi.obdobi }}</p></td>
-	<td><p>{{ obdobi.pocet }}</p></td>
-	<td><p>{{ obdobi.obdobi.limit }}</p></td>
-	<td><p>{{ obdobi.stav }} %</p></td>
+	<td><p>{{ tema.tema }}</p></td>
+	<td><p>{{ tema.pocet }}</p></td>
+	<td><p>{{ tema.limit }}</p></td>
+	<td><p>{{ tema.stav }} %</p></td>
 </tr>
 {% endfor %}
 

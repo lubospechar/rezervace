@@ -33,17 +33,17 @@ class Okres(models.Model):
 		verbose_name_plural = "Okresy"
 		ordering = ["nazev",]
 		
-class Obdobi(models.Model):
-	obdobi = models.CharField(max_length=40, unique=True, verbose_name="Období")
+class Tema(models.Model):
+	tema = models.CharField(max_length=40, unique=True, verbose_name="Téma")
 	poradi = models.IntegerField(verbose_name="Logické pořadí")
 	limit = models.IntegerField(verbose_name="Nutný počet fotografií")
 
 	def __unicode__(self):
-		return self.obdobi
+		return self.tema
 	    
 	class Meta:
-		verbose_name = "Období"
-		verbose_name_plural = "Období"
+		verbose_name = "Téma"
+		verbose_name_plural = "Témata"
 		ordering = ["poradi"]
 
 
@@ -61,23 +61,31 @@ class Status(models.Model):
 		ordering = ["status",]
 
 class Fotografie(models.Model):
-	obdobi = models.ForeignKey(Obdobi, verbose_name="Období")
-	pocet = models.IntegerField(default=0, verbose_name="Počet fotografií za období")
+	tema = models.ForeignKey(Tema, verbose_name="Téma")
+	pocet = models.IntegerField(default=0, verbose_name="Počet fotografií tohoto tématu")
 	rezervace = models.ForeignKey('Rezervace', verbose_name="Rezervace")
+	vlastni_limit = models.IntegerField(null=True, blank=True, verbose_name="Vlastní limit")
 	
 	def __unicode__(self):
-		return u'%s: %s' % (self.obdobi, self.pocet)
+		return u'%s: %s' % (self.tema, self.pocet)
 	
+	def limit(self):
+		if self.vlastni_limit:
+			return self.vlastni_limit
+		else:
+			return self.tema.limit
+			
 	def stav(self):
-		if self.pocet >= self.obdobi.limit:
+		
+		if self.pocet >= self.limit():
 			return 100
 		else:
-			return int(float(self.pocet)/float(self.obdobi.limit)*100)
+			return int(float(self.pocet)/float(self.limit())*100)
 	
 	class Meta:
 		verbose_name = "Fotografie"
 		verbose_name_plural = "Fotografie"
-		ordering = ["obdobi",]
+		ordering = ["tema",]
 
 
 class Rezervace(models.Model):

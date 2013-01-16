@@ -1,7 +1,7 @@
 # coding: utf-8
 from django.contrib.gis import admin
 
-from katalog.models import Kraj, Okres, Obdobi, Fotografie, Rezervace, Poznamky, Status
+from katalog.models import Kraj, Okres, Tema, Fotografie, Rezervace, Poznamky, Status
 
 
 class KrajAdmin(admin.ModelAdmin):
@@ -16,7 +16,7 @@ class OkresAdmin(admin.ModelAdmin):
 
 admin.site.register(Okres, OkresAdmin)
 
-admin.site.register(Obdobi)
+admin.site.register(Tema)
 
 class PoznamkyInline(admin.TabularInline):
 	model = Poznamky
