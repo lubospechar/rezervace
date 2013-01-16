@@ -41,7 +41,7 @@
 		
 		for (var bod in rezervace) {
 			marker = new google.maps.Marker({
- 				icon: {path: google.maps.SymbolPath.CIRCLE, scale: 7, fillOpacity: 6, fillColor: rezervace[bod]['barva'], strokeWeight: 0,},
+ 				icon: {path: google.maps.SymbolPath.CIRCLE, scale: 7, fillOpacity: 6, fillColor: rezervace[bod]['barva'], strokeWeight: 1,},
 
 				position: new google.maps.LatLng(rezervace[bod]['y'],rezervace[bod]['x']),
 				title: rezervace[bod]['nazev'],

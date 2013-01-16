@@ -110,11 +110,22 @@ class Rezervace(models.Model):
 		return int(sum(procento)/len(procento))
 	
 	def barva(self):
-		r = (255*(100-self.stav()))/100; 
-		g = (255*self.stav())/100
-		b = 0
+		index = int(round(self.stav(),-1) / 10)
+		barva = {
+			0: '#ff0000',
+			1: '#ff3900',
+			2: '#ff7400',
+			3: '#ffaf00',
+			4: '#ffd300',
+			5: '#ffff00',
+			6: '#e7ff00',
+			7: '#d0ff00',
+			8: '#b3ff00',
+			9: '#79ff00',
+			10: '#00ff00',
+		    }
 		
-		return '#%s' % (struct.pack('BBB', r, g, b).encode('hex'))
+		return barva[index]
 				
 	
 	class Meta:
