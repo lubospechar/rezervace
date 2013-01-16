@@ -14,7 +14,7 @@ def home(request):
 	if request.GET:
 		for pole in request.GET.dict():
 			kwargs = {pole: request.GET[pole]}
-			if pole == 'f_okres' or pole == 'f_status':
+			if pole == 'okres' or pole == 'status':
 				rezervace = rezervace.filter(**kwargs)
 	
 	

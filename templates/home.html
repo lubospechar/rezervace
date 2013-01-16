@@ -3,7 +3,6 @@
 {% block obsah %}
 {% load filtrurl %}
 
-{{ req|filtrurl }}
 
 <h1>Rezervace - Tabulka</h1>
 
@@ -11,13 +10,13 @@
 <h3>Okres</h3>
 <a href="{% url home %}">Vše</a>
 {% for okres in okresy %}
-	<a href="{% url home %}?f_okres={{ okres.pk }}">{{ okres }}</a>
+	<a href="{% url home %}{% filtrurl req=request get='okres' param=okres.pk %}">{{ okres }}</a>
 {% endfor %}
 
 <h3>Status</h3>
 <a href="{% url home %}">Vše</a>
 {% for status in statusy %}
-	<a href="{% url home %}?f_status={{ status.pk }}">{{ status }}</a>
+	<a href="{% url home %}{% filtrurl req=request get='status' param=status.pk %}">{{ status }}</a>
 {% endfor %}
 
 
