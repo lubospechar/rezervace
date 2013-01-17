@@ -2,6 +2,7 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.gis.geos import MultiPoint, Point
 
 import json
 
@@ -54,4 +55,34 @@ def profil(request, slug):
 	
 def mapa(request):
 	rezervace = Rezervace.objects.all()
-	return render(request, 'mapa.html', {'rezervace': rezervace})
+	okresy = Okres.objects.all()
+	statusy = Status.objects.all()
+	
+	if request.GET:
+		for pole in request.GET.dict():
+			kwargs = {pole: request.GET[pole]}
+			rezervace = rezervace.filter(**kwargs)
+	
+	
+	
+	multipoint = list()
+	
+	if rezervace.count() > 0:
+		for polozka in rezervace:
+				multipoint.append(polozka.stred)
+	else:
+		multipoint.append(Point(14, 48))
+		multipoint.append(Point(16.5, 51))
+			
+		
+	multi = MultiPoint(multipoint)
+	
+	return render(request, 'mapa.html',
+		{
+			'rezervace': rezervace,
+			'okresy': okresy,
+			'statusy': statusy,
+			'req': request.GET.dict(),
+			'hranice': multi.extent
+		}
+	)

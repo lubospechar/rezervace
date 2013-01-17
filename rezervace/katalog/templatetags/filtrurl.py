@@ -5,7 +5,7 @@ from django.utils.datastructures import MultiValueDictKeyError
 register = template.Library()
 
 @register.simple_tag
-def filtrurl(req, get=None, param=None):
+def filtrurl(req, get=None, param=None, pryc=None):
 	if get:
 		if not param:
 			if get:
@@ -26,6 +26,7 @@ def filtrurl(req, get=None, param=None):
 	if req.GET:
 		for polozka in req.GET.dict():
 			if not polozka == get:
-				vrat = vrat + u'&amp;%s=%s' % (polozka, req.GET[polozka])
+				if not polozka == pryc:
+					vrat = vrat + u'&amp;%s=%s' % (polozka, req.GET[polozka])
 				
 	return vrat
