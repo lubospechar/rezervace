@@ -1,6 +1,7 @@
 # coding: utf-8
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 import json
 
@@ -13,20 +14,30 @@ def home(request):
 	
 	if request.GET:
 		for pole in request.GET.dict():
-			kwargs = {pole: request.GET[pole]}
-			try:
-				int(request.GET[pole])
-				rezervace = rezervace.filter(**kwargs)
-			except ValueError:
-				if request.GET[pole] == 'vzestupne':
-					rezervace = rezervace.order_by(pole)
-				else:
-					rezervace = rezervace.order_by("-" + pole)
+			if not pole == 'stranka':
+				kwargs = {pole: request.GET[pole]}
+				try:
+					int(request.GET[pole])
+					rezervace = rezervace.filter(**kwargs)
+				except ValueError:
+					if request.GET[pole] == 'vzestupne':
+						rezervace = rezervace.order_by(pole)
+					else:
+						rezervace = rezervace.order_by("-" + pole)
 	
+	
+	strankovani = Paginator(rezervace, 20)
+	stranka = request.GET.get('stranka')
+	try:
+		rezervace_strankovani = strankovani.page(stranka)
+	except PageNotAnInteger:
+		rezervace_strankovani = strankovani.page(1)
+	except EmptyPage:
+		contacts = strankovani.page(strankovani.num_pages)
 	
 	return render(request, 'home.html', 
 		{
-			'rezervace': rezervace,
+			'rezervace': rezervace_strankovani,
 			'okresy': okresy,
 			'statusy': statusy,
 			'req': request.GET.dict()

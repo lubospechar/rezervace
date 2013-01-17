@@ -51,4 +51,21 @@
     
 </table>
 
+<div class="strankovani">
+    <span class="step-links">
+        {% if rezervace.has_previous %}
+            <a href="{% filtrurl req=request get='stranka' param=rezervace.previous_page_number %}">předchozí</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ rezervace.number }} of {{ rezervace.paginator.num_pages }}.
+        </span>
+
+        {% if rezervace.has_next %}
+            <a href="{% filtrurl req=request get='stranka' param=rezervace.next_page_number %}">další</a>
+        {% endif %}
+    </span>
+</div>
+
+
 {% endblock %}
