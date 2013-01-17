@@ -14,8 +14,11 @@ def home(request):
 	if request.GET:
 		for pole in request.GET.dict():
 			kwargs = {pole: request.GET[pole]}
-			if pole == 'okres' or pole == 'status':
+			try:
+				int(request.GET[pole])
 				rezervace = rezervace.filter(**kwargs)
+			except ValueError:
+				pass
 	
 	
 	return render(request, 'home.html', 
