@@ -18,7 +18,10 @@ def home(request):
 				int(request.GET[pole])
 				rezervace = rezervace.filter(**kwargs)
 			except ValueError:
-				pass
+				if request.GET[pole] == 'vzestupne':
+					rezervace = rezervace.order_by(pole)
+				else:
+					rezervace = rezervace.order_by("-" + pole)
 	
 	
 	return render(request, 'home.html', 

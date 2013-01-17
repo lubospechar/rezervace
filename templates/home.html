@@ -23,9 +23,9 @@
 <h2>Výsledky</h2>
 <table>
     <tr>
-	<th>kód</th>
+	<th><a href="{% url home %}{% filtrurl req=request get='kod' %}">kód</a></th>
 	<th>status</th>
-	<th>název</th>
+	<th><a href="{% url home %}{% filtrurl req=request get='nazev' %}">název</a></th>
 	<th>okres</th>
 	<th>předmět ochrany</th>
 	<th>stav</th>
