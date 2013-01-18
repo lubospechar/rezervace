@@ -93,6 +93,9 @@
 	<a href="{% url mapa %}{% filtrurl req=request get='status' param=status.pk %}">{{ status }}</a>
 {% endfor %}
 
+<p>Počet zobrazených rezervací: <strong>{{ rezervace.count }}</strong></p>
+<a href="{% url home %}{% mapaurl req=request %}">výsledek do tabulky</a>
+
 <div id="mapa">
 </div>
 

@@ -27,14 +27,14 @@ def home(request):
 						rezervace = rezervace.order_by("-" + pole)
 	
 	
-	strankovani = Paginator(rezervace, 20)
+	strankovani = Paginator(rezervace, 25)
 	stranka = request.GET.get('stranka')
 	try:
 		rezervace_strankovani = strankovani.page(stranka)
 	except PageNotAnInteger:
 		rezervace_strankovani = strankovani.page(1)
 	except EmptyPage:
-		contacts = strankovani.page(strankovani.num_pages)
+		rezervace_strankovani = strankovani.page(strankovani.num_pages)
 	
 	return render(request, 'home.html', 
 		{

@@ -30,3 +30,29 @@ def filtrurl(req, get=None, param=None, pryc=None):
 					vrat = vrat + u'&amp;%s=%s' % (polozka, req.GET[polozka])
 				
 	return vrat
+
+@register.simple_tag
+def mapaurl(req):
+	vrat = '?'
+	if req.GET:
+		for polozka in req.GET.dict():
+			if polozka == 'status' or polozka == 'okres':
+				vrat = vrat + u'%s=%s&amp;' % (polozka, req.GET[polozka])
+	
+	return vrat
+
+@register.simple_tag
+def nazev_odkazu(nazev, get, pk):
+	try:
+		if int(get) == pk:
+			return "<strong>%s</strong>" % nazev
+	except:
+		pass
+	return nazev
+
+@register.simple_tag
+def nazev_odkazu_vse(nazev, get):
+	if not get:
+		return "<strong>%s</strong>" % nazev
+	else:
+		return nazev
