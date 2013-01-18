@@ -4,14 +4,20 @@
     <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styl.css" />
-	{% block script %}
-	{% endblock %}
+		{% block script %}
+		{% endblock %}
 	<title>Rezervace</title>	
     </head>
 
     <body{% block googlemaps_onload %}{% endblock %}>
-	{% block obsah %}
-	{% endblock %}
+		
+
+			{% block filtr %}
+			{% endblock %}
+
+		
+		{% block obsah %}
+		{% endblock %}
     </body>
 
 </html>

@@ -2,8 +2,8 @@
 
 {% block obsah %}
 
-<h1>{{profil.nazev}} ({{ profil.status.status }})</h1>
-<h2>Okres: {% for okres in profil.okres.all %} {{ okres }}{% if not forloop.last %},{% endif %} {% endfor %}</h2>
+<h1>Rezervace - {{profil.nazev}} ({{ profil.status.status }})</h1>
+<h2 class="profil">Okres: {% for okres in profil.okres.all %} {{ okres }}{% if not forloop.last %},{% endif %} {% endfor %}</h2>
 
 <h3>Charakteristika</h3>
 <table>

@@ -1,28 +1,12 @@
 {% extends "base.html" %}
 
-{% block obsah %}
 {% load filtrurl %}
 
 
+{% block obsah %}
 <h1>Rezervace - Tabulka</h1>
 
-<h2>Filtr</h2>
-<h3>Okres</h3>
-<a href="{% url home %}{% filtrurl req=request pryc='okres' %}">{% nazev_odkazu_vse nazev='Vše' get=request.GET.okres %}</a>
-{% for okres in okresy %}
-	<a href="{% url home %}{% filtrurl req=request get='okres' param=okres.pk %}">{% nazev_odkazu nazev=okres get=request.GET.okres pk=okres.pk %}</a>
-{% endfor %}
 
-<h3>Status</h3>
-<a href="{% url home %}{% filtrurl req=request pryc='status' %}">{% nazev_odkazu_vse nazev='Vše' get=request.GET.status %}</a>
-{% for status in statusy %}
-	<a href="{% url home %}{% filtrurl req=request get='status' param=status.pk %}">{% nazev_odkazu nazev=status get=request.GET.status pk=status.pk %}</a>
-{% endfor %}
-
-
-<h2>Výsledky</h2>
-<p>Počet nalezených rezervací: <strong>{{ rezervace.paginator.count }}</strong></p>
-<a href="{% url mapa %}{% mapaurl req=request %}">výsledek do mapy</a>
 <table>
     <tr>
 	<th><a href="{% url home %}{% filtrurl req=request get='kod' %}">kód</a></th>
@@ -53,15 +37,14 @@
     
 </table>
 
-<div class="strankovani">
-    <span class="step-links">
-        {% if rezervace.has_previous %}
+
+<div id="strankovani">
+<h2>Stránkování</h2>
+<p>Stránka {{ rezervace.number }} z {{ rezervace.paginator.num_pages }}</p>
+	{% if rezervace.has_previous %}
             <a href="{% filtrurl req=request get='stranka' param=rezervace.previous_page_number %}">předchozí</a>
         {% endif %}
 
-        <span class="current">
-            Stránka {{ rezervace.number }} z {{ rezervace.paginator.num_pages }}.
-        </span>
 
         {% if rezervace.has_next %}
             <a href="{% filtrurl req=request get='stranka' param=rezervace.next_page_number %}">další</a>
@@ -69,5 +52,28 @@
     </span>
 </div>
 
+{% endblock %}
 
+
+
+{% block filtr %}
+<div id="filtr">
+<h2>Filtr</h2>
+
+
+<h3>Status</h3>
+<a href="{% url home %}{% filtrurl req=request pryc='status' %}">{% nazev_odkazu_vse nazev='Vše' get=request.GET.status %}</a>
+{% for status in statusy %}
+	<a href="{% url home %}{% filtrurl req=request get='status' param=status.pk %}">{% nazev_odkazu nazev=status.status get=request.GET.status pk=status.pk %}</a>
+{% endfor %}
+
+<h3>Okres</h3>
+<a href="{% url home %}{% filtrurl req=request pryc='okres' %}">{% nazev_odkazu_vse nazev='Vše' get=request.GET.okres %}</a>
+{% for okres in okresy %}
+	<a href="{% url home %}{% filtrurl req=request get='okres' param=okres.pk %}">{% nazev_odkazu nazev=okres get=request.GET.okres pk=okres.pk %}</a>
+{% endfor %}
+
+<p>Počet nalezených rezervací: <strong>{{ rezervace.paginator.count }}</strong></p>
+<a href="{% url mapa %}{% mapaurl req=request %}">výsledek do mapy</a>
+</div>
 {% endblock %}
