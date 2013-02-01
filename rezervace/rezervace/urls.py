@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^$', 'katalog.views.home', name='home'),
     url(r'^mapa/', 'katalog.views.mapa', name='mapa'),
     url(r'^rezervace/(?P<slug>[-\w]+)/$', 'katalog.views.profil', name='profil'),
+    url(r'^chroupy/$', 'katalog.views.chroupy', name='chroupy'),
     # url(r'^rezervace/', include('rezervace.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

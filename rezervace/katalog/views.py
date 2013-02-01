@@ -3,10 +3,14 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.gis.geos import MultiPoint, Point
+from django.template.defaultfilters import slugify
 
 import json
+import xml.etree.ElementTree as ET
 
 from katalog.models import Rezervace, Okres, Status
+from katalog.forms import ChroupyForm
+
 
 def home(request):
 	okresy = Okres.objects.all()
@@ -86,3 +90,37 @@ def mapa(request):
 			'hranice': multi.extent
 		}
 	)
+
+# zpracuje xml soubor, ktery vyplivne drusop.nature.cz
+def chroupy(request):
+	if request.POST:
+		formular = ChroupyForm(request.POST, request.FILES)
+		if formular.is_valid():
+			f = request.FILES['soubor']
+			text = unicode(f.read().decode('cp1250', errors='replace')).encode('cp1250')
+			#text = unicode(f.read(), 'cp1250')
+			#text = f.read().decode('cp1250', errors='replace')
+			tree = ET.fromstring(text)
+			for record in tree:
+				polozka = Rezervace()
+				polozka.kod = record.find('CIS').text
+				polozka.nazev = record.find('NAZEV').text
+				polozka.status = formular.cleaned_data['status']
+				polozka.stred = Point(0, 0)
+				polozka.save()
+				if Rezervace.objects.filter(slug=slugify(polozka.nazev)).exists():
+					polozka.slug = slugify('%s%s' % (polozka.nazev, polozka.kod))
+					print polozka.slug
+					
+				else:
+					polozka.slug = slugify(polozka.nazev)
+					print polozka.slug
+				polozka.okres = formular.cleaned_data['okres']
+				polozka.save()
+			
+			return HttpResponse('ok')
+		
+	else:
+		formular = ChroupyForm()
+	
+	return render(request, 'chroupy.html', {'formular': formular,})

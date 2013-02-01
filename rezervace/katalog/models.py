@@ -89,7 +89,7 @@ class Fotografie(models.Model):
 
 
 class Rezervace(models.Model):
-	kod = models.IntegerField(verbose_name="Kód")
+	kod = models.IntegerField(verbose_name="Kód", unique=True)
 	nazev = models.CharField(max_length=100, verbose_name="Název")
 	slug = models.SlugField(unique=True)
 	status = models.ForeignKey(Status, verbose_name="Status")
@@ -118,6 +118,8 @@ class Rezervace(models.Model):
 		return int(sum(procento)/len(procento))
 	
 	def barva(self):
+		if self.stav() == 0:
+			return '#5d5dff'
 		index = int(round(self.stav(),-1) / 10)
 		barva = {
 			0: '#ff0000',

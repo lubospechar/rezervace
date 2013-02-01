@@ -1,0 +1,6 @@
+<form action="{% url chroupy %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+<table>
+{{ formular }}
+</table>
+<p><input type="submit" value="odešli"></p>
+</form>
