@@ -102,8 +102,20 @@ def chroupy(request):
 			#text = f.read().decode('cp1250', errors='replace')
 			tree = ET.fromstring(text)
 			for record in tree:
+				kod = record.find('CIS').text
+				okres = formular.cleaned_data['okres']
+				if Rezervace.objects.filter(kod=kod).exists():
+					if Rezervace.objects.filter(kod=kod, okres=okres).exists():
+						return HttpResponse('Duplicita')
+					else:
+						existujici = Rezervace.objects.get(kod=kod)
+						#existujici.okres.add(okres)
+						#existujici.save()
+						print okres
+						continue
+					
 				polozka = Rezervace()
-				polozka.kod = record.find('CIS').text
+				polozka.kod = kod
 				polozka.nazev = record.find('NAZEV').text
 				polozka.status = formular.cleaned_data['status']
 				polozka.stred = Point(0, 0)
@@ -115,7 +127,7 @@ def chroupy(request):
 				else:
 					polozka.slug = slugify(polozka.nazev)
 					print polozka.slug
-				polozka.okres = formular.cleaned_data['okres']
+				polozka.okres = okres
 				polozka.save()
 			
 			return HttpResponse('ok')

@@ -99,6 +99,7 @@ class Rezervace(models.Model):
 	commons = models.URLField(null=True, blank=True, verbose_name="Odkaz na commons")
 	okres = models.ManyToManyField(Okres, verbose_name="Okres", null=False, blank=False)
 	uprava = models.DateTimeField(auto_now=True, verbose_name="Poslední úprava položky")
+	kontrola_adres = models.BooleanField(verbose_name="Adresay na wiki a commons fungují")
 	objects = models.GeoManager()
 	
 	def __unicode__(self):

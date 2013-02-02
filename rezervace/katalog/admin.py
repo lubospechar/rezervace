@@ -31,7 +31,7 @@ class RezervaceAdmin(admin.ModelAdmin):
 		PoznamkyInline,
 		FotografieInline,
 	]
-	list_display = ('nazev', 'kod', 'status', 'uprava')
+	list_display = ('nazev', 'kod', 'status', 'uprava', 'kontrola_adres')
 	list_filter = ['uprava','status', 'okres']
 	
 	prepopulated_fields = {"slug": ("nazev",)}

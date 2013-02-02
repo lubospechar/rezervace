@@ -23,6 +23,7 @@
 		<td><p>{{ profil.stred.y }}N {{ profil.stred.x }}E</p></td>
 	</tr>
 	
+	{% if profil.kontrola_adres %}
 	<tr>
 		<th>Wikipedia</th>
 		<td><p><a href="{{ profil.wikipedia }}">{{ profil.wikipedia}}</a></p></td>
@@ -32,7 +33,7 @@
 		<th>Commons</th>
 		<td><p><a href="{{ profil.commons }}">{{ profil.commons}}</a></p></td>
 	</tr>
-	
+	{% endif %}
 	<tr>
 		<th>Mapy</th><td>
 		<p>
