@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="windows-1250"?>
 <TABLE>
- <RECORD id="136">
-  <CIS>136</CIS>
+ <RECORD id="110">
+  <CIS>110</CIS>
   <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
-  <NAZEV>Chýnovská jeskyně</NAZEV>
- </RECORD>
- <RECORD id="1073">
-  <CIS>1073</CIS>
-  <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
-  <NAZEV>Luční</NAZEV>
+  <NAZEV>Hojná voda</NAZEV>
  </RECORD>
  <RECORD id="375">
   <CIS>375</CIS>
   <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
   <NAZEV>Ruda</NAZEV>
  </RECORD>
- <RECORD id="1288">
-  <CIS>1288</CIS>
+ <RECORD id="444">
+  <CIS>444</CIS>
   <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
-  <NAZEV>Stročov</NAZEV>
+  <NAZEV>Terčino údolí</NAZEV>
  </RECORD>
 </TABLE>

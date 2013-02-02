@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="752">
+  <CIS>752</CIS>
+  <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
+  <NAZEV>Barrandovské skály</NAZEV>
+ </RECORD>
+ <RECORD id="1121">
+  <CIS>1121</CIS>
+  <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
+  <NAZEV>Cikánka I</NAZEV>
+ </RECORD>
+ <RECORD id="49">
+  <CIS>2449</CIS>
+  <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
+  <NAZEV>Černé rokle</NAZEV>
+ </RECORD>
+ <RECORD id="743">
+  <CIS>743</CIS>
+  <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
+  <NAZEV>Dalejský profil</NAZEV>
+ </RECORD>
+ <RECORD id="11422">
+  <CIS>2317</CIS>
+  <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
+  <NAZEV>Letiště Letňany</NAZEV>
+ </RECORD>
+ <RECORD id="1103">
+  <CIS>1103</CIS>
+  <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
+  <NAZEV>Lochkovský profil</NAZEV>
+ </RECORD>
+ <RECORD id="742">
+  <CIS>742</CIS>
+  <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
+  <NAZEV>Požáry</NAZEV>
+ </RECORD>
+ <RECORD id="745">
+  <CIS>745</CIS>
+  <N_KATEGORIE>Národní přírodní památka</N_KATEGORIE>
+  <NAZEV>U Nového mlýna</NAZEV>
+ </RECORD>
+</TABLE>

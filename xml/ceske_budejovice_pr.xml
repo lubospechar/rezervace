@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="1405">
+  <CIS>1405</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Dvořiště</NAZEV>
+ </RECORD>
+ <RECORD id="1291">
+  <CIS>1291</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Horusická blata</NAZEV>
+ </RECORD>
+ <RECORD id="1802">
+  <CIS>1802</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Karvanice</NAZEV>
+ </RECORD>
+ <RECORD id="1385">
+  <CIS>1385</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Libochovka</NAZEV>
+ </RECORD>
+ <RECORD id="1391">
+  <CIS>1391</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Mokřiny u Vomáčků</NAZEV>
+ </RECORD>
+ <RECORD id="1390">
+  <CIS>1390</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Radomilická mokřina</NAZEV>
+ </RECORD>
+ <RECORD id="1392">
+  <CIS>1392</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Ruda u Kojákovic</NAZEV>
+ </RECORD>
+ <RECORD id="2232">
+  <CIS>2232</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Trpnouzské blato</NAZEV>
+ </RECORD>
+ <RECORD id="486">
+  <CIS>486</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>V Rájích</NAZEV>
+ </RECORD>
+ <RECORD id="1393">
+  <CIS>1393</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Velký a Malý Kamýk</NAZEV>
+ </RECORD>
+ <RECORD id="1389">
+  <CIS>1389</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Vrbenské rybníky</NAZEV>
+ </RECORD>
+ <RECORD id="1387">
+  <CIS>1387</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Vysoká Běta</NAZEV>
+ </RECORD>
+</TABLE>

@@ -7,8 +7,9 @@ from django.template.defaultfilters import slugify
 
 import json
 import xml.etree.ElementTree as ET
+from urllib import quote
 
-from katalog.models import Rezervace, Okres, Status
+from katalog.models import Rezervace, Okres, Status, Tema, Fotografie
 from katalog.forms import ChroupyForm
 
 
@@ -73,7 +74,8 @@ def mapa(request):
 	
 	if rezervace.count() > 0:
 		for polozka in rezervace:
-				multipoint.append(polozka.stred)
+				if polozka.stred != Point(0, 0):
+					multipoint.append(polozka.stred)
 	else:
 		multipoint.append(Point(14, 48))
 		multipoint.append(Point(16.5, 51))
@@ -102,33 +104,61 @@ def chroupy(request):
 			#text = f.read().decode('cp1250', errors='replace')
 			tree = ET.fromstring(text)
 			for record in tree:
-				kod = record.find('CIS').text
-				okres = formular.cleaned_data['okres']
-				if Rezervace.objects.filter(kod=kod).exists():
-					if Rezervace.objects.filter(kod=kod, okres=okres).exists():
-						return HttpResponse('Duplicita')
-					else:
-						existujici = Rezervace.objects.get(kod=kod)
-						#existujici.okres.add(okres)
-						#existujici.save()
-						print okres
+				kod = int(record.find('CIS').text)
+				nazev = record.find('NAZEV').text
+				okresy = formular.cleaned_data['okres']
+				
+				adepti_na_duplicitu = Rezervace.objects.filter(nazev=nazev)
+				
+				if adepti_na_duplicitu.exists():
+					
+					nalezen_kod = False
+					for adept in adepti_na_duplicitu:
+						if adept.kod == kod:
+							nalezen_kod = True
+							print "duplicita: kod: %s, rezervace: %s %s" % (adept.kod, adept.status, adept.nazev)
+						
+							for okres in okresy:
+								pridat_okres = True
+							
+								for adept_okres in adept.okres.all():
+									if adept_okres == okres:
+										pridat_okres = False	
+												
+								if pridat_okres:
+									print "   přídávám okres: %s" % okres
+									adept.okres.add(okres)
+									adept.save()
+					
+					if nalezen_kod:
 						continue
+					
+					slug = slugify('%s-%s' % (nazev, kod))
+					print "duplicitni název, přidávím do slugu kód - slug: %s" % slug
+				else:
+					slug = slugify(nazev)
 					
 				polozka = Rezervace()
 				polozka.kod = kod
-				polozka.nazev = record.find('NAZEV').text
+				polozka.nazev = nazev
 				polozka.status = formular.cleaned_data['status']
 				polozka.stred = Point(0, 0)
+				polozka.slug = slug
+				polozka.kontrola_adres = False
+				polozka.wikipedia = u'http://cs.wikipedia.org/wiki/%s' % (quote(nazev.encode('utf8')))
+				polozka.commons = u'http://commons.wikimedia.org/wiki/Category:%s' % (quote(nazev.encode('utf8')))
 				polozka.save()
-				if Rezervace.objects.filter(slug=slugify(polozka.nazev)).exists():
-					polozka.slug = slugify('%s%s' % (polozka.nazev, polozka.kod))
-					print polozka.slug
-					
-				else:
-					polozka.slug = slugify(polozka.nazev)
-					print polozka.slug
-				polozka.okres = okres
+				polozka.okres = formular.cleaned_data['okres']
 				polozka.save()
+				
+				for tema in ['brzke jaro', 'jaro', 'leto', 'pozdni leto', 'podzim', 'zima']:
+					fotografie = Fotografie()
+					fotografie.tema = Tema.objects.get(tema=tema)
+					fotografie.pocet = 0
+					fotografie.rezervace = polozka
+					fotografie.save()
+				
+				print u'přidáno  kod: %s, rezervace: %s %s' % (polozka.kod, polozka.status, polozka.nazev)
 			
 			return HttpResponse('ok')
 		

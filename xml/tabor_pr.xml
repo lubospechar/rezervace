@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="670">
+  <CIS>670</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Borkovická blata</NAZEV>
+ </RECORD>
+ <RECORD id="1814">
+  <CIS>1814</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Dráchovské tůně</NAZEV>
+ </RECORD>
+ <RECORD id="1291">
+  <CIS>1291</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Horusická blata</NAZEV>
+ </RECORD>
+ <RECORD id="131">
+  <CIS>131</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Choustník</NAZEV>
+ </RECORD>
+ <RECORD id="1290">
+  <CIS>1290</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Kladrubská hora</NAZEV>
+ </RECORD>
+ <RECORD id="1294">
+  <CIS>1294</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Kozohlůdky</NAZEV>
+ </RECORD>
+ <RECORD id="2236">
+  <CIS>2236</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Pacova hora</NAZEV>
+ </RECORD>
+ <RECORD id="311">
+  <CIS>311</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Písečný přesyp u Vlkova</NAZEV>
+ </RECORD>
+ <RECORD id="1292">
+  <CIS>1292</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Rod</NAZEV>
+ </RECORD>
+</TABLE>

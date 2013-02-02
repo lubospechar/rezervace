@@ -1,8 +1,10 @@
 # coding: utf-8
 import struct
 
-
+#from django.db import models
 from django.contrib.gis.db import models
+
+
 from django.db.models import Sum
 
 

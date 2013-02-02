@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="78">
+  <CIS>2478</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Divoká Šárka</NAZEV>
+ </RECORD>
+ <RECORD id="741">
+  <CIS>741</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Homolka</NAZEV>
+ </RECORD>
+ <RECORD id="746">
+  <CIS>746</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Chuchelský háj</NAZEV>
+ </RECORD>
+ <RECORD id="736">
+  <CIS>736</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Klánovický les - Cyrilov</NAZEV>
+ </RECORD>
+ <RECORD id="1097">
+  <CIS>1097</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Klapice</NAZEV>
+ </RECORD>
+ <RECORD id="1095">
+  <CIS>1095</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Mýto</NAZEV>
+ </RECORD>
+ <RECORD id="761">
+  <CIS>761</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Podhoří</NAZEV>
+ </RECORD>
+ <RECORD id="661">
+  <CIS>661</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Prokopské údolí</NAZEV>
+ </RECORD>
+ <RECORD id="358">
+  <CIS>358</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Radotínské údolí</NAZEV>
+ </RECORD>
+ <RECORD id="1096">
+  <CIS>1096</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Slavičí údolí</NAZEV>
+ </RECORD>
+ <RECORD id="1099">
+  <CIS>1099</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Staňkovka</NAZEV>
+ </RECORD>
+ <RECORD id="738">
+  <CIS>738</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Šance</NAZEV>
+ </RECORD>
+ <RECORD id="1093">
+  <CIS>1093</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Údolí Únětického potoka</NAZEV>
+ </RECORD>
+ <RECORD id="1209">
+  <CIS>1209</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>V pískovně</NAZEV>
+ </RECORD>
+ <RECORD id="750">
+  <CIS>750</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Vinořský park</NAZEV>
+ </RECORD>
+</TABLE>

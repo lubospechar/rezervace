@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="124">
+  <CIS>124</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Hřebenec</NAZEV>
+ </RECORD>
+ <RECORD id="637">
+  <CIS>637</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Husova kazatelna</NAZEV>
+ </RECORD>
+ <RECORD id="13925">
+  <CIS>5692</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Jablonná - mokřad</NAZEV>
+ </RECORD>
+ <RECORD id="13824">
+  <CIS>5661</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Jezírko u Dobříše</NAZEV>
+ </RECORD>
+ <RECORD id="186">
+  <CIS>186</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Kosova Hora</NAZEV>
+ </RECORD>
+ <RECORD id="1979">
+  <CIS>1979</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Na horách</NAZEV>
+ </RECORD>
+ <RECORD id="13823">
+  <CIS>5660</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Pařezitý</NAZEV>
+ </RECORD>
+ <RECORD id="13959">
+  <CIS>5705</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Rybník Vočert a Lazy</NAZEV>
+ </RECORD>
+ <RECORD id="13983">
+  <CIS>5720</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Štola Jarnice</NAZEV>
+ </RECORD>
+ <RECORD id="451">
+  <CIS>451</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Třemešný vrch</NAZEV>
+ </RECORD>
+ <RECORD id="2068">
+  <CIS>2068</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Vinice</NAZEV>
+ </RECORD>
+ <RECORD id="638">
+  <CIS>638</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Vrškámen</NAZEV>
+ </RECORD>
+</TABLE>
