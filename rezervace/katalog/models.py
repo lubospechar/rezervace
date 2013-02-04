@@ -22,19 +22,6 @@ class Kraj(models.Model):
 		verbose_name_plural = "Kraje"
 		ordering = ["nazev",]
 		
-class Okres(models.Model):
-	nazev = models.CharField(max_length=35, unique=True, verbose_name="Název")
-	kraj = models.ForeignKey(Kraj)
-	slug = models.SlugField(unique=True)
-	
-	def __unicode__(self):
-		return self.nazev
-
-	class Meta:
-		verbose_name = "Okres"
-		verbose_name_plural = "Okresy"
-		ordering = ["nazev",]
-		
 class Tema(models.Model):
 	tema = models.CharField(max_length=40, unique=True, verbose_name="Téma")
 	poradi = models.IntegerField(verbose_name="Logické pořadí")
@@ -99,9 +86,9 @@ class Rezervace(models.Model):
 	stred = models.PointField(verbose_name="Přibližný střed")
 	wikipedia = models.URLField(null=True, blank=True, verbose_name="Odkaz na wikipedii")
 	commons = models.URLField(null=True, blank=True, verbose_name="Odkaz na commons")
-	okres = models.ManyToManyField(Okres, verbose_name="Okres", null=False, blank=False)
+	okres = models.ManyToManyField('Okres', verbose_name="Okres", null=False, blank=False)
 	uprava = models.DateTimeField(auto_now=True, verbose_name="Poslední úprava položky")
-	kontrola_adres = models.BooleanField(verbose_name="Adresay na wiki a commons fungují")
+	kontrola_adres = models.BooleanField(verbose_name="Kontrola")
 	objects = models.GeoManager()
 	
 	def __unicode__(self):
@@ -146,7 +133,47 @@ class Rezervace(models.Model):
 		verbose_name_plural = "Rezervace"
 		ordering = ["nazev",]
 
+class Okres(models.Model):
+	nazev = models.CharField(max_length=35, unique=True, verbose_name="Název")
+	kraj = models.ForeignKey(Kraj)
+	slug = models.SlugField(unique=True)
 	
+	def __unicode__(self):
+		return self.nazev
+	
+	def statistika(self):
+		rezervace = Rezervace.objects.filter(okres=self)
+		maji = 0
+		nemaji = 0
+		stavy = list()
+		celkem = list()
+		for polozka in rezervace:
+			stavy.append(polozka.stav())
+			pocet = polozka.celkovy_pocet_fotografii()
+			celkem.append(pocet)
+			if pocet > 0:
+				maji += 1
+			else:
+				nemaji += 1
+		
+		stav_okresu = sum(stavy) / len(stavy)
+		stav_ano_ne = round(float(maji) / float(maji + nemaji) * 100, 1)
+		
+			
+		return {
+			'stav': stav_okresu,
+			'maji_fotografie': maji,
+			'nemaji_fotografie': nemaji,
+			'stav_ano_ne': stav_ano_ne,
+			'celkem_fotografii': sum(celkem),
+		}
+		
+
+	class Meta:
+		verbose_name = "Okres"
+		verbose_name_plural = "Okresy"
+		ordering = ["nazev",]	
+
 class Poznamky(models.Model):
 	poznamka = models.CharField(max_length=255)
 	rezervace = models.ForeignKey(Rezervace, verbose_name="Rezervace")

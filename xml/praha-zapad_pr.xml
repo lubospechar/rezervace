@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="548">
+  <CIS>548</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Karlické údolí</NAZEV>
+ </RECORD>
+ <RECORD id="1224">
+  <CIS>1224</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Kobylí draha</NAZEV>
+ </RECORD>
+ <RECORD id="547">
+  <CIS>547</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Kulivá hora</NAZEV>
+ </RECORD>
+ <RECORD id="358">
+  <CIS>358</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Radotínské údolí</NAZEV>
+ </RECORD>
+ <RECORD id="374">
+  <CIS>374</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Roztocký háj - Tiché údolí</NAZEV>
+ </RECORD>
+ <RECORD id="1223">
+  <CIS>1223</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Zvolská homole</NAZEV>
+ </RECORD>
+</TABLE>

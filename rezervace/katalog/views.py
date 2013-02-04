@@ -9,7 +9,7 @@ import json
 import xml.etree.ElementTree as ET
 from urllib import quote
 
-from katalog.models import Rezervace, Okres, Status, Tema, Fotografie
+from katalog.models import Rezervace, Okres, Status, Tema, Fotografie, Kraj
 from katalog.forms import ChroupyForm
 
 
@@ -134,7 +134,7 @@ def chroupy(request):
 						continue
 					
 					slug = slugify('%s-%s' % (nazev, kod))
-					print "duplicitni název, přidávím do slugu kód - slug: %s" % slug
+					print u'duplicitni název, přidávím do slugu kód - slug: %s' % slug
 				else:
 					slug = slugify(nazev)
 					
@@ -166,3 +166,7 @@ def chroupy(request):
 		formular = ChroupyForm()
 	
 	return render(request, 'chroupy.html', {'formular': formular,})
+
+def statistiky(request):
+	okresy = Okres.objects.all()
+	return render(request, 'statistiky.html', {'okresy': okresy})

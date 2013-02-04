@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block obsah %}
+<h1>Rezervace - Statistika</h1>
+
+<table>
+<tr><th>Okres</th><th>Počet rezervací</th><th>Stav</th><th>Alespoň jedna fotografie</th><th>Žadné fotografie</th><th>Stav (alespoň 1 fotografie)</th><th>Počet fotografií v okresu</th></tr>
+{% for okres in okresy %}
+<tr class="{% cycle 'radek1' 'radek2' %}">
+	<td>{{ okres }}</td>
+	<td>{{ okres.rezervace_set.count }}</td>
+	<td style="min-width: 70px">{{ okres.statistika.stav }} %</td>
+	<td>{{ okres.statistika.maji_fotografie }}</td>
+	<td>{{ okres.statistika.nemaji_fotografie }}</td>
+	<td>{{ okres.statistika.stav_ano_ne }} %</td>
+	<td>{{ okres.statistika.celkem_fotografii }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="164">
+  <CIS>164</CIS>
+  <N_KATEGORIE>Národní přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Karlštejn</NAZEV>
+ </RECORD>
+ <RECORD id="177">
+  <CIS>177</CIS>
+  <N_KATEGORIE>Národní přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Koda</NAZEV>
+ </RECORD>
+ <RECORD id="840">
+  <CIS>840</CIS>
+  <N_KATEGORIE>Národní přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Týřov</NAZEV>
+ </RECORD>
+ <RECORD id="851">
+  <CIS>851</CIS>
+  <N_KATEGORIE>Národní přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Vůznice</NAZEV>
+ </RECORD>
+</TABLE>

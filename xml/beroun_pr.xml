@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="849">
+  <CIS>849</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Jouglovka</NAZEV>
+ </RECORD>
+ <RECORD id="548">
+  <CIS>548</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Karlické údolí</NAZEV>
+ </RECORD>
+ <RECORD id="219">
+  <CIS>219</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Kobyla</NAZEV>
+ </RECORD>
+ <RECORD id="14027">
+  <CIS>5739</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Na Voskopě</NAZEV>
+ </RECORD>
+ <RECORD id="597">
+  <CIS>597</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Tetínské skály</NAZEV>
+ </RECORD>
+ <RECORD id="550">
+  <CIS>550</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Voškov</NAZEV>
+ </RECORD>
+</TABLE>

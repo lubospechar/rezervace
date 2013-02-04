@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="2248">
+  <CIS>2248</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Černolické skály</NAZEV>
+ </RECORD>
+ <RECORD id="1169">
+  <CIS>1169</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Čičovický kamýk</NAZEV>
+ </RECORD>
+ <RECORD id="1885">
+  <CIS>1885</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Hostivické rybníky</NAZEV>
+ </RECORD>
+ <RECORD id="660">
+  <CIS>660</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Kněživka</NAZEV>
+ </RECORD>
+ <RECORD id="2234">
+  <CIS>2234</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Krásná stráň</NAZEV>
+ </RECORD>
+ <RECORD id="2250">
+  <CIS>2250</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Pazderna</NAZEV>
+ </RECORD>
+ <RECORD id="12860">
+  <CIS>3407</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Skalsko</NAZEV>
+ </RECORD>
+</TABLE>

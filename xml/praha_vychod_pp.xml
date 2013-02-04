@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="1066">
+  <CIS>1066</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Božkovské jezírko</NAZEV>
+ </RECORD>
+ <RECORD id="2006">
+  <CIS>2006</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Hluchov</NAZEV>
+ </RECORD>
+ <RECORD id="2005">
+  <CIS>2005</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Kuchyňka</NAZEV>
+ </RECORD>
+ <RECORD id="1408">
+  <CIS>1408</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Lom Chlum</NAZEV>
+ </RECORD>
+ <RECORD id="1173">
+  <CIS>1173</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Lom Na plachtě</NAZEV>
+ </RECORD>
+ <RECORD id="565">
+  <CIS>565</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Prutník</NAZEV>
+ </RECORD>
+ <RECORD id="12860">
+  <CIS>3407</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>Skalsko</NAZEV>
+ </RECORD>
+ <RECORD id="1070">
+  <CIS>1070</CIS>
+  <N_KATEGORIE>Přírodní památka</N_KATEGORIE>
+  <NAZEV>U skal</NAZEV>
+ </RECORD>
+</TABLE>

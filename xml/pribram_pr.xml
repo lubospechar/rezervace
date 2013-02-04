@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="2155">
+  <CIS>2155</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Andělské schody</NAZEV>
+ </RECORD>
+ <RECORD id="99">
+  <CIS>2499</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Getsemanka I. a II.</NAZEV>
+ </RECORD>
+ <RECORD id="1132">
+  <CIS>1132</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Hradec</NAZEV>
+ </RECORD>
+ <RECORD id="2249">
+  <CIS>2249</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Jezero</NAZEV>
+ </RECORD>
+ <RECORD id="200">
+  <CIS>200</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Kuchyňka</NAZEV>
+ </RECORD>
+ <RECORD id="267">
+  <CIS>267</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Na skalách</NAZEV>
+ </RECORD>
+ <RECORD id="1136">
+  <CIS>1136</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Vymyšlenská pěšina</NAZEV>
+ </RECORD>
+</TABLE>
