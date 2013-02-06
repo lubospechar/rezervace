@@ -1,0 +1,834 @@
+/*#$id: default_style.css,v 1.2 2001/12/13 13:20:22 tokr exp $ $name:  $*/
+.logo_div{
+  width:100%;
+  height:95px;
+  background-image:url(/images/design/pozadi.jpg);
+  background-repeat:no-repeat;
+  background-position:center right
+}
+.green_line{
+  width:100%;
+  height:8px;
+  background-color: #e3f5d4;
+  margin:5px;
+  font-size:0px;
+  clear: both;
+}
+/*.green_line2,.green_line3{
+  width:99%;
+  background-color: #6cc91f;
+}
+.green_line2{
+  height:2px;
+}
+.green_line3{
+  height:1px;
+}*/
+body {
+	font-family: arial, helvetica, sans-serif;
+  margin-top:0px;
+  background-color: #ffffff;
+}
+h2
+{
+	color: black;
+	font-family: arial, helvetica, sans-serif;
+	font-weight: bold;
+}
+td {
+  font-size:12px;
+	font-family: arial, helvetica, sans-serif;
+}
+table.brow
+{
+	background-color: #eeeeee;
+	font-family: arial, helvetica, sans-serif;
+	border : 1px solid black;
+	padding : 1px;
+	font-size : 12px;
+}
+th.brow
+{
+	font-family: arial, helvetica, sans-serif;
+	background-color: #247437;
+	text-align: center;
+	color : #fff;
+	border-left : 1px solid gray;
+}
+td.brow
+{
+	font-family: arial, helvetica, sans-serif;
+  font-size:normal;
+	border-left : 1px solid gray;
+	border-bottom : 1px solid gray;
+	font-size : 12px;
+}
+table.brow_menu
+{
+	font-size : 12px;
+	font-family: arial, helvetica, sans-serif;
+	border : 1px solid gray;
+	padding : 0px;
+}
+td.brow_menu
+{
+	font-family: arial, helvetica, sans-serif;
+	border-top : 0px solid gray;
+	border-left : 0px solid gray;
+}
+td.browdark
+{
+	background-color: #f8f8f8;
+	font-family: arial, helvetica, sans-serif;
+	border-left : 1px solid gray;
+	border-bottom : 1px solid gray;
+	font-size : 12px;
+}
+td.brow_gray
+{
+	font-family: arial, helvetica, sans-serif;
+  font-size:normal;
+	border-left : 1px solid gray;
+	border-bottom : 1px solid gray;
+	font-size : 12px;
+	color: darkgray;
+}
+td.browdark_gray
+{
+	background-color: #f8f8f8;
+	font-family: arial, helvetica, sans-serif;
+	border-left : 1px solid gray;
+	border-bottom : 1px solid gray;
+	font-size : 12px;
+	color: darkgray;  
+}
+
+td.brow_green
+{
+	font-family: arial, helvetica, sans-serif;
+  font-size:normal;
+	border-left : 1px solid gray;
+	border-bottom : 1px solid gray;
+	font-size : 12px;
+	color: green;
+}
+td.browdark_green
+{
+	background-color: #f8f8f8;
+	font-family: arial, helvetica, sans-serif;
+	border-left : 1px solid gray;
+	border-bottom : 1px solid gray;
+	font-size : 12px;
+	color: green;  
+}
+
+td.brow2
+{
+	font-family: arial, helvetica, sans-serif;
+	border-top : 1px solid gray;
+	border-left : 1px solid gray;
+	border-right : 1px solid gray;
+	border-bottom : 1px solid gray;
+	font-size : smaller;
+}
+td.browselect
+{
+	font-family: arial, helvetica, sans-serif;
+	color: red;
+	border-left : 1px solid gray;
+	border-bottom : 1px solid gray;
+	font-size : smaller;
+}
+td.browdarkselect
+{
+	font-family: arial, helvetica, sans-serif;
+	color: red;
+	background-color: #f8f8f8;
+	border-left : 1px solid gray;
+	border-bottom : 1px solid gray;
+	font-size : smaller;
+}
+th.image
+{
+	background-color: #247437;
+	border-left : 1px solid gray;
+}
+td.image,td.tdsum
+{
+	background-color: #b5e4ba;
+	border-bottom : 1px solid gray;
+	border-left : 1px solid gray;
+	  
+}
+td.tdsum
+{
+	border-top : 2px solid gray;
+	  
+}
+th.left
+{
+	font-family: arial, helvetica, sans-serif;
+	background-color: #408c00;
+	text-align: left;
+	color : white;
+	border-left : 1px solid gray;
+	font-size : smaller;
+}
+td.left
+{
+	font-family: arial, helvetica, sans-serif;
+	border-top : 1px solid gray;
+	border-left : 1px solid gray;
+	font-size : smaller;
+}
+table.panel
+{
+  background-image:url(/images/design/pozadi.jpg);
+  background-repeat:no-repeat;
+  background-position:center right
+}
+.inputblock
+{
+	color: black;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 18px;
+	text-align: left;
+	background-color : silver;
+	border-width : 1px;
+	font-weight : bold;
+}
+.filterblock
+{
+	color: black;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 18px;
+	text-align: left;
+	font-weight : bold;
+}
+td.filterleft
+{
+    color: #0053a6;
+    text-align: left;
+    vertical-align: text-top
+}
+td.filterlefttop
+{
+    vertical-align: top;
+    text-align: left;
+}
+td.filterright
+{
+    color: #0053a6;
+    text-align: left
+}
+td.smalllabel
+{
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    text-align: left
+}
+td.right
+{
+    color: #d33e30;
+    font-family: arial, helvetica, sans-serif;
+    text-align: right
+}
+a.pages:visited
+{
+	color: #b75a3e;
+	text-decoration: underline
+}
+a.pages:link
+{
+	color: #b75a3e;
+	text-decoration: underline
+}
+a.pages:hover
+{
+	color: #ff8b00;
+	text-decoration: underline
+}
+a.none:hover, a.none:link, a.none:visited 
+{
+	text-decoration: none
+}
+
+input.button_menu{
+  background-color: buttonface;
+  font-size:12px;
+}
+.frozen
+{
+    color: #070;
+}
+body.panel_main_left
+{
+  margin:0px;
+}
+body.panel_main
+{
+}
+body.panel
+{
+	background-color: #ffffff;
+}
+body.panel_cis
+{
+	background-color: #e3f5d4
+}
+a {
+	text-decoration: underline;
+	color : #b75a3e;
+}
+a:hover {
+	color: #ff8b00;
+	text-decoration: underline
+}
+a.body
+{
+	text-decoration: none;
+	font-family: arial, helvetica, sans-serif;
+	color : #408c00;
+	font-size : 14px;
+	font-weight : bold;
+}
+a.body:hover
+{
+	color: #6cc91f;
+	text-decoration: underline
+}
+a.panel
+{
+	text-decoration: none;
+	font-family: arial, helvetica, sans-serif;
+	color : #247437;
+	font-size : 14px;
+	font-weight : bold;
+}
+a.panel:hover
+{
+	color: #6CC91F;
+	text-decoration: underline
+}
+a.panel_cis
+{
+	text-decoration: none;
+	font-family: arial, helvetica, sans-serif;
+	color : #247437;
+	font-size : 14px;
+	font-weight : bold;
+}
+a.panel_cis:hover
+{
+	color: #6CC91F;
+	text-decoration: underline
+}
+a.map
+{
+	text-decoration: none;
+	font-family: arial, helvetica, sans-serif;
+	color : #408c00;
+	font-size : 14px;
+	font-weight : bold;
+}
+a.map:hover
+{
+	color: #4169e1;
+	text-decoration: underline
+}
+td.stred
+{
+    text-align: center
+}
+span.firma
+{
+    text-decoration: underline
+}
+.agendanazev
+{
+	color: black;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+}
+.odbornazev
+{
+    color: black;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold
+}
+.uradnazev
+{
+    color: black;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold
+}
+.required
+{
+  background-color: #b5e4ba;
+  border-bottom: #408c00 thin solid;
+  border-left: #408c00 thin solid;
+  border-right: #408c00 thin solid;
+  border-top: #408c00 thin solid
+}
+.pravy
+{
+    text-align: right
+}
+.levy
+{
+    text-align: left
+}
+.text
+{
+	color: black;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 14px;
+}
+table.sitename
+{
+	font-family: arial, helvetica, sans-serif;
+}
+.sitename
+{
+	font-family: arial, helvetica, sans-serif;
+	font-size : 14px;
+	color : silver;
+}
+.sitename1
+{
+	font-family: arial, helvetica, sans-serif;
+	font-weight : bold;
+	font-size : 45px;
+	color : black;
+}
+.sitename2
+{
+	font-family: arial, helvetica, sans-serif;
+	font-weight : bold;
+	font-size : 22px;
+	color : silver;
+}
+table.block
+{
+	background-color: #eeeeee;
+	font-family: arial, helvetica, sans-serif;
+	font-size : 12px;
+}
+th.block
+{
+	background-color: #408c00;
+	font-family: arial, helvetica, sans-serif;
+	text-align: center;
+	padding : 1px 10px 1px 10px;
+	color : white;
+	border-bottom : 2px solid black;
+	font-size : 16px;
+}
+td.block
+{
+	padding : 0px 5px 0px 5px;
+	font-family: arial, helvetica, sans-serif;
+	font-size : 12px;
+}
+a.block
+{
+	font-family: arial, helvetica, sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+	color : #408c00;
+	font-size : 16px;
+}
+a.block:link
+{
+	font-family: arial, helvetica, sans-serif;
+	color: #408c00;
+	text-decoration : underline;
+}
+a.block:visited
+{
+	font-family: arial, helvetica, sans-serif;
+	color: #408c00;
+	text-decoration : underline;
+}
+a.block:hover
+{
+	font-family: arial, helvetica, sans-serif;
+	color: #318ad9;
+	text-decoration: underline
+}
+a.block:active
+{
+	font-family: arial, helvetica, sans-serif;
+	text-decoration: underline;
+	color: #408c00;
+}
+a.th
+{
+	font-family: arial, helvetica, sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+	color : white;
+	font-size : 12px;
+}
+a.th:link
+{
+	font-family: arial, helvetica, sans-serif;
+	text-decoration : none;
+}
+a.th:visited
+{
+	font-family: arial, helvetica, sans-serif;
+	text-decoration : none;
+}
+a.th:hover
+{
+	font-family: arial, helvetica, sans-serif;
+	color: #cbcbcb;
+	text-decoration: none
+}
+a.th:active
+{
+	font-family: arial, helvetica, sans-serif;
+	text-decoration: underline
+}
+
+input.button {
+	background-color: #ada;
+}
+
+.block2
+{
+	color: black;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 16px;
+	text-align: left;
+	background-color : silver;
+	border : 1px solid black;
+	font-weight : bold;
+	padding : 1 10 1 10;
+}
+
+.caption18
+{
+    color: #004080;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+   	margin-left : 18pt;
+
+}
+body.tree
+{   
+    background-color: #dee9fa;
+    font-family: verdana,arial;
+}
+td.tree
+{   
+    background-color: #dee9fa;
+    text-align: left;
+    vertical-align: text-top;
+    font-family: verdana,arial; font-size : 10pt; 
+    text-align: left
+}
+a.tree
+{
+    text-decoration : none; 
+}
+a.tree:link
+{
+    color: black;
+}
+a.tree:visited
+{
+    color: black;
+}
+a.tree:hover
+{
+    background-color: #ff8b00;
+    color: black;
+    text-decoration: underline
+}
+a.tree:active
+{
+    background-color: #3366ff;
+    color: white;
+    font-weight: bold;
+}
+li
+{
+    text-align: justify;
+}
+li.index
+{
+    line-height: 1.6;
+    vertical-align: text-top;
+}
+li.index_more
+{
+    line-height: 2.5;
+}
+td.border
+{
+	border : 2 outset white;
+}
+td.window
+{
+	border : 2 inset white;
+}
+body.toc
+{
+	background-color: #ffffff;
+}
+body.info
+{
+	background-color: #ffffff;
+}
+body.db
+{
+	background-color: #ffffff;
+}
+body.legend
+{
+	background-color: white;
+	font-size : 10px;
+	font-family: arial, helvetica, sans-serif;
+}
+table.legend
+{
+	font-size : 10px;
+	font-family: arial, helvetica, sans-serif;
+}
+td.legend
+{
+	font-size : 10px;
+	font-family: arial, helvetica, sans-serif;
+}
+.captionlegend
+{
+	color: black;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+}
+table.info
+{
+	background-color: #eeeeee;
+	font-family: arial, helvetica, sans-serif;
+	padding : 1px;
+	border : 1px solid gray;
+}
+th.info
+{
+	font-family: arial, helvetica, sans-serif;
+	background-color: #408c00;
+	font-size : 16px;
+	text-align: left;
+	color : white;
+	border-left : 1px solid gray;
+}
+td.info
+{
+	font-size : 14px;
+	font-family: arial, helvetica, sans-serif;
+	border : 1px solid gray;
+}
+td.infoleft
+{
+	font-size : 14px;
+	font-family: arial, helvetica, sans-serif;
+	border : 1px solid gray;
+	font-weight : bold;
+}
+table.soft_tree
+{
+	font-family: arial, helvetica, sans-serif;
+	border : 0px solid black;
+	padding : 0px;
+  spacing : 0px;
+	font-size : normal;
+}
+
+td.soft_tree
+{
+	font-family: arial, helvetica, sans-serif;
+  font-size:14px;
+  text-align : center;
+}
+th.soft_tree
+{
+	font-family: arial, helvetica, sans-serif;
+  font-size:20px;
+  text-align : center;
+}
+table.mail
+{
+	background-color: #eeeeee;
+	font-family: arial, helvetica, sans-serif;
+	border : 1px solid black;
+	padding : 1px;
+	font-size : normal;
+}
+th.mail
+{
+	font-family: arial, helvetica, sans-serif;
+  font-size:17px;
+	background-color: #408c00;
+	text-align: right;
+	color : white;
+	border-left : 1px solid gray;
+}
+td.mail
+{
+	font-family: arial, helvetica, sans-serif;
+  font-size:11px;
+}
+.span_images {
+  visibility: hidden;
+}
+.my_block {
+  white-space: nowrap;
+}
+.dalsicharakteristiky {
+  text-align: center;
+  text-transform: uppercase;
+	color: green;
+  font-weight: 700;
+  cursor: pointer;
+}
+td.sp_name {
+  background-color: #fff;
+	font-weight: 600;
+	vertical-align: top;
+	white-space: nowrap;
+}
+td.sp_value {
+  background-color: #fff;
+	text-align: justify;
+	vertical-align: top;
+}
+td.sp_name_brow {
+  background-color: #f8f8f8;
+	font-weight: 600;
+	vertical-align: top;
+	white-space: nowrap;
+}
+td.sp_name_browdark {
+  background-color: #eff7ef;
+	font-weight: 600;
+	vertical-align: top;
+	white-space: nowrap;
+}
+td.sp_value_brow {
+  background-color: #f8f8f8;
+	text-align: justify;
+}
+td.sp_value_browdark {
+  background-color: #eff7ef;
+	text-align: justify;
+}
+td.sp_value_r_brow {
+  background-color: #f8f8f8;
+	text-align: right;
+}
+
+.font_normal {
+	font-weight : normal;
+}
+.font_bold {
+	font-weight : bold;
+}
+
+.caption
+{
+	color: black;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.caption_smaller
+{
+	color: black;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+}
+.caption_bg
+{
+	color: black;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+  background-image: url(/images/green_line.jpg);
+  background-repeat: repeat-y;
+  background-position: center;
+	text-align: center;
+}
+.table_rozc {
+  border: 2px solid #107437;
+  border-collapse: separate;
+  font-weight: bold;
+}
+.rozc_svetly {
+	border-top: 2px solid  #aaddaa;
+	border-bottom: 2px solid  #aaddaa;
+	border-left: 1px solid  #aaddaa;
+	border-right: 1px solid  #aaddaa;
+}
+.rozc_tmavy {
+  background-color: #f0faf0;
+	border-top: 2px solid  #aaddaa;
+	border-bottom: 2px solid  #aaddaa;
+	border-left: 1px solid  #aaddaa;
+	border-right: 1px solid  #aaddaa;
+	
+}
+/*
+.a_rozc {
+	color: #107437;
+	text-decoration: none;
+}
+*/
+a.a_rozc:visited {
+	color: #247437;
+	text-decoration: none;
+	font-weight: bold;
+}
+a.a_rozc:link {
+	color: #247437;
+	text-decoration: none
+	font-weight: bold;
+}
+a.a_rozc:hover {
+	color: #247437;
+	text-decoration: underline
+	font-weight: bold;
+}
+
+.dilci_nadpis {
+  font-weight: bold;
+  font-size:16px;
+  font-style:italic;
+	font-family: arial, helvetica, sans-serif;
+}
+.class1 {
+  font-size:12px;
+	font-family: arial, helvetica, sans-serif;
+}
+
+th.odps
+{
+	font-family: arial, helvetica, sans-serif;
+	background-color: #e8fcfe;
+	text-align: left;
+	border-left : 1px solid gray;
+	border-bottom : 1px solid gray;
+}
+
+td.nesouhlas {
+  background-color:red;
+  white-space:nowrap;
+}

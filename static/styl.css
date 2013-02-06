@@ -10,7 +10,7 @@ body {
 }
 h1 {
 	font-family: arial;
-	font-size: 20px;
+	font-size: 16px;
 	letter-spacing: 2px;
 	background: #23389A;
 	color: #ffffff;
@@ -45,7 +45,7 @@ h1 {
 
 h2 {
 	font-family: arial;
-	font-size: 17px;
+	font-size: 14px;
 	letter-spacing: 1px;
 	background: #90a2f6;
 	padding: 3px 0px 3px 0px;
@@ -56,7 +56,7 @@ h2 {
 }
 
 h3 {
-	font-size: 16px;
+	font-size: 14px;
 	font-family: arial;
 	padding: 20px 0px 0px 13px;
 	margin: 0;
@@ -64,15 +64,15 @@ h3 {
 
 #strankovani p, #filtr p, #filtr_mapa p {
 	font-family: tahoma;
-	font-weight: bold;
-	font-size: 14px;
+	font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+	font-size: 12px;
 	margin: 0;
 	padding: 10px 0px 0px 10px;
 }
 
 #strankovani a, #filtr a, #filtr_mapa a {
-	font-size: 15px;
-	font-family: tahoma;
+	font-size: 12px;
+	font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
 	color: #23389A;
 	padding: 1px 0px 1px 13px;
 	text-decoration: none;
@@ -100,7 +100,7 @@ th, td {
 th {
     background: #90a2f6;
     font-family: arial;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 th a {
@@ -108,13 +108,17 @@ th a {
 }
 
 table p {
-	font-family: tahoma;
-	font-size: 12px;
+	font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+	font-size: 11px;
 	margin: 0px 0px 0px 0px;
 }
 
-.status, .nazev, .okres {
-    min-width: 180px;
+/*.status, .nazev, .okres {
+   max-width: 180px;
+}*/
+
+.predmet {
+	max-width: 730px;
 }
 
 .stav {

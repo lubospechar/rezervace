@@ -29,7 +29,7 @@
 	{% endfor %}
 	
 	</td>
-	<td><p>{{ polozka.predmet }}</p></td>
+	<td class="predmet"><p>{{ polozka.predmet }}</p></td>
 	<td class="stav" style="background: {{ polozka.barva }}"><p><strong>{{ polozka.stav }} %</strong></p></td>
 
     </tr>    
@@ -75,5 +75,6 @@
 
 <p>Počet nalezených rezervací: <strong>{{ rezervace.paginator.count }}</strong></p>
 <a href="{% url mapa %}{% mapaurl req=request %}">výsledek do mapy</a>
+<a href="{% url body %}{% mapaurl req=request %}">výsledek do gpx</a>
 </div>
 {% endblock %}

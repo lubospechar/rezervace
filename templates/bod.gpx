@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="rezervace" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<wpt lat="{{ rezervace.stred.y|safe }}" lon="{{ rezervace.stred.x|safe }}">
+		<name>{{ rezervace.nazev }}</name>
+		<cmt>{{ rezervace.status.status }}</cmt>
+	</wpt>
+</gpx>

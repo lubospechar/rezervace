@@ -99,6 +99,7 @@
 
 <p>Počet nalezených rezervací: <strong>{{ rezervace.count }}</strong></p>
 <a href="{% url home %}{% mapaurl req=request %}">výsledek do tabulky</a>
+<a href="{% url body %}{% mapaurl req=request %}">výsledek do gpx</a>
 </div>
 {% endblock %}
 

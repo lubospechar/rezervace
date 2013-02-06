@@ -170,3 +170,18 @@ def chroupy(request):
 def statistiky(request):
 	okresy = Okres.objects.all()
 	return render(request, 'statistiky.html', {'okresy': okresy})
+
+def bod(request, id):
+	rezervace = Rezervace.objects.get(pk = id)
+	return render(request, 'bod.gpx', {'rezervace': rezervace}, content_type='application/xhtml+xml')
+
+def body(request):
+	rezervace = Rezervace.objects.all()
+	
+	if request.GET:
+		for pole in request.GET.dict():
+			kwargs = {pole: request.GET[pole]}
+			rezervace = rezervace.filter(**kwargs)
+			
+			
+	return render(request, 'body.gpx', {'rezervace': rezervace}, content_type='application/xhtml+xml')

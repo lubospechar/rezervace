@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-2">
+<link href="index.php_soubory/default_style.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="http://drusop.nature.cz/favicon.ico">
+</head>
+<body>
+<div style="display: none;" id="wait_label" class="text">Čekejte prosím ...</div>
+  <script src="index_data/ga.js" async="" type="text/javascript"></script><script>
+    function NewWindowFotoarch(script) {
+      newwindow = window.open(script, 'Fotoarchiv','height=760,width=900,scrollbars,resizable');
+      newwindow.focus();
+    }
+  </script>
+  <script>
+<!--
+  /*
+  function ViewBlock(id) {
+    //document.writeln(id);
+    var actual = document.getElementById(id);
+    if (actual) {
+      if (actual.style.visibility == 'hidden') {
+        actual.style.visibility = 'visible';
+        actual.style.position = 'relative';
+      }
+      else {
+        actual.style.visibility = 'hidden';
+        actual.style.position = 'absolute';
+      }
+    }
+    var gr1 = document.getElementById('gr_pl1');
+    var gr2 = document.getElementById('gr_pl2');
+    if (gr1.innerHTML == '+') {
+      gr1.innerHTML = '-';
+      gr2.innerHTML = '-';
+    }
+    else {
+      gr1.innerHTML = '+';
+      gr2.innerHTML = '+';
+    }
+  }
+  */
+  function NewWindowInfozchu_rez_knihy_stare(script) {
+    newwindow = window.open(script, 'Info','height=600,width=600,left=300,top=50,scrollbars,resizable');
+    newwindow.focus();
+  }
+  function info_zchu_rez_knihy_stare (id) {
+    NewWindowInfozchu_rez_knihy_stare('/ost/chrobjekty/zchu_rez_knihy_stare/edit.php?info&EDIT_ID='+id);
+  }
+
+  function NewWindowInfozchu_rez_knihy(script) {
+    newwindow = window.open(script, 'Info','height=600,width=600,left=300,top=50,scrollbars,resizable');
+    newwindow.focus();
+  }
+  function info_zchu_rez_knihy (id) {
+    NewWindowInfozchu_rez_knihy('/ost/chrobjekty/zchu_rez_knihy/edit.php?info&EDIT_ID='+id);
+  }
+
+  function NewWindowEditzchu_rez_knihy(script) {
+    newwindow = window.open(script, 'Edit','height=600,width=600,left=300,top=50,scrollbars,resizable');
+    newwindow.focus();
+  }
+  function edit_zchu_rez_knihy (id) {
+    NewWindowEditzchu_rez_knihy('/ost/chrobjekty/zchu_rez_knihy/edit.php?edit&EDIT_ID='+id);
+  }
+
+  function NewWindowDeletezchu_rez_knihy(script) {
+    newwindow = window.open(script, 'Delete','height=200,width=700,scrollbars,resizable');
+    newwindow.focus();
+  }
+  function delete_zchu_rez_knihy (id) {
+    NewWindowDeletezchu_rez_knihy('/ost/chrobjekty/zchu_rez_knihy/delete.php?DELETE_ID='+id);
+  }
+//-->
+</script>
+
+<script>
+  <!--
+    function NewWindowSolo(script) {
+      newwindow = window.open(script, 'Info','height=400,width=550,left=50,top=30,scrollbars,resizable');
+      newwindow.focus();
+    }
+    function Okres_1 (id) {
+      NewWindowSolo('/ost/chrobjekty/xokresy/brow.php?okresy=1&ID_CHROB='+id);
+    }
+  //-->
+</script>
+<script type="text/javascript">
+<!--
+//-->
+</script>
+<form name="frm_" method="get" action="" onsubmit="return true">
+    
+    <script type="text/javascript">
+      function Page(tablename, page) {
+        if (tablename) {
+          var f=document.forms[0];
+          if (typeof(f['pagepos'+tablename]) == 'undefined') {
+            var input = document.createElement('INPUT');
+            input.setAttribute('type', 'hidden');
+            input.setAttribute('name', 'pagepos'+tablename);
+            input.setAttribute('value', page);
+            f.appendChild(input);
+          } else {
+            f['pagepos'+tablename].value = page;
+          }
+          // nacteni select_id druhe tabulky
+          // lumo 1.12.2008
+          var f_t = document.getElementsByName('frm_'+tablename);
+          f_t = f_t[0];
+          if (f_t != null) {
+            for (var i=f_t.length-1; i>=0; i--) {
+              if (unescape(f_t[i].name)=='SELECT_ID'+tablename+'[]' &&
+                  f_t[i].checked) {
+                  var input = document.createElement('INPUT');
+                  input.setAttribute('type', 'hidden');
+                  input.setAttribute('name', 'SELECT_ID'+tablename+'[]');
+                  input.setAttribute('value', f_t[i].value);
+                  f.appendChild(input);
+              }
+            }
+          }
+          f.action = f.action+'#'+tablename;
+        } else {
+          var f=document.frm_;
+          if (f.pagepos)
+            f.pagepos.value = page;
+        }
+        f.submit();
+      }
+      function OrderBy(tablename, ob) {
+        if (tablename) {
+          var f=document.forms[0];
+          if (typeof(f['ORDER_BY'+tablename]) == 'undefined') {;
+            var input = document.createElement('INPUT');
+            input.setAttribute('type', 'hidden');
+            input.setAttribute('name', 'ORDER_BY'+tablename);
+            input.setAttribute('value', ob);
+            f.appendChild(input);
+          } else {
+            f['ORDER_BY'+tablename].value = ob;
+          }
+          f.action = f.action+'#'+tablename;
+        } else {
+          var f=document.frm_;
+          if (f.ORDER_BY)
+            f.ORDER_BY.value = ob;
+        }
+        f.submit();
+      }
+    </script>
+    
+    <span class="caption">Objekty ústředního seznamu</span>
+<input id="TYPVYSTUPU_drusop" name="TYPVYSTUPU[]" value="drusop" type="hidden">
+<input name="h_pp" value="1" type="hidden">
+<input name="h_evl" value="1" type="hidden">
+<input name="h_ptacob" value="1" type="hidden">
+<input name="h_schru" value="1" type="hidden">
+<input name="h_pstromy" value="1" type="hidden">
+<input name="h_kod" value="" type="hidden">
+<input name="h_nazev" value="" type="hidden">
+<input name="h_organ_oochp" value="" type="hidden">
+<input name="h_kraj" value="CZ021" type="hidden">
+<input name="OKRES" value="CZ0213" type="hidden">
+<input name="ORP_ICOB" value="" type="hidden">
+<input name="POVOB_ICOB" value="" type="hidden">
+<input name="h_obec" value="" type="hidden">
+<input name="h_ku" value="" type="hidden">
+<input name="h_submit" value="Vyhledat" type="hidden">
+<input name="pagepos" value="" type="hidden">
+<input name="SELECT_ID_USE_FILTER" value="" type="hidden">
+<input name="SELECT_ID_CHECK_ALL" value="" type="hidden">
+<input name="SHOW2MAP_ALL" value="0" type="hidden">
+  <table class="brow_menu" width="99%" border="0" cellspacing="0">
+  <tbody><tr><td class="brow_menu" nowrap="nowrap" width="40%">
+  <span>Vybrané: <b>18</b></span><span style="margin-left:10px"></span></td><td class="brow_menu">  </td></tr>
+  </tbody></table>
+  <table class="brow" width="99%" border="0" cellspacing="0">
+ <tbody><tr class="brow">
+  <th class="image" width="1px">&nbsp;</th>
+  <th class="image" width="1%">&nbsp;</th>
+  <th class="brow" align="right"><input name="ORDER_BY" value="chf.nazev" type="hidden"><a class="th" href="javascript:OrderBy('',%20'CIS')" title="Řadit vzestupně">Kód</a></th>
+  <th class="brow" align="left"><a class="th" href="javascript:OrderBy('',%20'NAZEV')" title="Řadit vzestupně">Název</a></th>
+  <th class="brow" align="left"><a class="th" href="javascript:OrderBy('',%20'KATEGORIE')" title="Řadit vzestupně">Kategorie</a></th>
+  <th class="brow" align="left">Příslušné orgány ochrany přírody</th>
+  <th class="brow" align="left"><a class="th" href="javascript:OrderBy('',%20'NAZEV_OPOP')" title="Řadit vzestupně">Odborné pracoviště ochrany přírody</a></th>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1053" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Bohouškova skalka" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1053" name="SELECT_ID[]" value="1053" onchange="javascript:if (document.getElementById('SELECT_ID_1053')) document.getElementById('SELECT_ID_1053').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="brow" align="right">1053</td>
+  <td class="brow" align="left">Bohouškova skalka</td>
+  <td class="brow" align="left">Přírodní památka</td>
+  <td class="brow" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="brow" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1409" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Hradiště" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1409" name="SELECT_ID[]" value="1409" onchange="javascript:if (document.getElementById('SELECT_ID_1409')) document.getElementById('SELECT_ID_1409').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="browdark" align="right">1409</td>
+  <td class="browdark" align="left">Hradiště</td>
+  <td class="browdark" align="left">Přírodní památka</td>
+  <td class="browdark" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="browdark" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1019" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Kalspot" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1019" name="SELECT_ID[]" value="1019" onchange="javascript:if (document.getElementById('SELECT_ID_1019')) document.getElementById('SELECT_ID_1019').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="brow" align="right">1019</td>
+  <td class="brow" align="left">Kalspot</td>
+  <td class="brow" align="left">Přírodní památka</td>
+  <td class="brow" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="brow" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1054" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Kovárské stráně" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1054" name="SELECT_ID[]" value="1054" onchange="javascript:if (document.getElementById('SELECT_ID_1054')) document.getElementById('SELECT_ID_1054').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="browdark" align="right">1054</td>
+  <td class="browdark" align="left">Kovárské stráně</td>
+  <td class="browdark" align="left">Přírodní památka</td>
+  <td class="browdark" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="browdark" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1018" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Markův mlýn" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1018" name="SELECT_ID[]" value="1018" onchange="javascript:if (document.getElementById('SELECT_ID_1018')) document.getElementById('SELECT_ID_1018').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="brow" align="right">1018</td>
+  <td class="brow" align="left">Markův mlýn</td>
+  <td class="brow" align="left">Přírodní památka</td>
+  <td class="brow" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="brow" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1407" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Mokřiny u Beřovic" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1407" name="SELECT_ID[]" value="1407" onchange="javascript:if (document.getElementById('SELECT_ID_1407')) document.getElementById('SELECT_ID_1407').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="browdark" align="right">1407</td>
+  <td class="browdark" align="left">Mokřiny u Beřovic</td>
+  <td class="browdark" align="left">Přírodní památka</td>
+  <td class="browdark" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="browdark" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=265" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Na Pilavě" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="265" name="SELECT_ID[]" value="265" onchange="javascript:if (document.getElementById('SELECT_ID_265')) document.getElementById('SELECT_ID_265').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="brow" align="right">265</td>
+  <td class="brow" align="left">Na Pilavě</td>
+  <td class="brow" align="left">Přírodní památka</td>
+  <td class="brow" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="brow" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1022" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Ostrov u Jedomělic" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1022" name="SELECT_ID[]" value="1022" onchange="javascript:if (document.getElementById('SELECT_ID_1022')) document.getElementById('SELECT_ID_1022').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="browdark" align="right">1022</td>
+  <td class="browdark" align="left">Ostrov u Jedomělic</td>
+  <td class="browdark" align="left">Přírodní památka</td>
+  <td class="browdark" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="browdark" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=864" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Otvovická skála" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="864" name="SELECT_ID[]" value="864" onchange="javascript:if (document.getElementById('SELECT_ID_864')) document.getElementById('SELECT_ID_864').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="brow" align="right">864</td>
+  <td class="brow" align="left">Otvovická skála</td>
+  <td class="brow" align="left">Přírodní památka</td>
+  <td class="brow" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="brow" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1049" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Pod Šibenicí" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1049" name="SELECT_ID[]" value="1049" onchange="javascript:if (document.getElementById('SELECT_ID_1049')) document.getElementById('SELECT_ID_1049').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="browdark" align="right">1049</td>
+  <td class="browdark" align="left">Pod Šibenicí</td>
+  <td class="browdark" align="left">Přírodní památka</td>
+  <td class="browdark" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="browdark" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=325" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Pod Veselovem" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="325" name="SELECT_ID[]" value="325" onchange="javascript:if (document.getElementById('SELECT_ID_325')) document.getElementById('SELECT_ID_325').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="brow" align="right">325</td>
+  <td class="brow" align="left">Pod Veselovem</td>
+  <td class="brow" align="left">Přírodní památka</td>
+  <td class="brow" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="brow" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1021" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Podlešínská skalní jehla" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1021" name="SELECT_ID[]" value="1021" onchange="javascript:if (document.getElementById('SELECT_ID_1021')) document.getElementById('SELECT_ID_1021').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="browdark" align="right">1021</td>
+  <td class="browdark" align="left">Podlešínská skalní jehla</td>
+  <td class="browdark" align="left">Přírodní památka</td>
+  <td class="browdark" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="browdark" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1911" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Slánská hora" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1911" name="SELECT_ID[]" value="1911" onchange="javascript:if (document.getElementById('SELECT_ID_1911')) document.getElementById('SELECT_ID_1911').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="brow" align="right">1911</td>
+  <td class="brow" align="left">Slánská hora</td>
+  <td class="brow" align="left">Přírodní památka</td>
+  <td class="brow" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="brow" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1050" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Smečenská rokle" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1050" name="SELECT_ID[]" value="1050" onchange="javascript:if (document.getElementById('SELECT_ID_1050')) document.getElementById('SELECT_ID_1050').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="browdark" align="right">1050</td>
+  <td class="browdark" align="left">Smečenská rokle</td>
+  <td class="browdark" align="left">Přírodní památka</td>
+  <td class="browdark" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="browdark" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1020" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Třebichovická olšinka" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1020" name="SELECT_ID[]" value="1020" onchange="javascript:if (document.getElementById('SELECT_ID_1020')) document.getElementById('SELECT_ID_1020').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="brow" align="right">1020</td>
+  <td class="brow" align="left">Třebichovická olšinka</td>
+  <td class="brow" align="left">Přírodní památka</td>
+  <td class="brow" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="brow" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1023" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Ve Šperkotně" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1023" name="SELECT_ID[]" value="1023" onchange="javascript:if (document.getElementById('SELECT_ID_1023')) document.getElementById('SELECT_ID_1023').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="browdark" align="right">1023</td>
+  <td class="browdark" align="left">Ve Šperkotně</td>
+  <td class="browdark" align="left">Přírodní památka</td>
+  <td class="browdark" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="browdark" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=862" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Vinařická hora" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="862" name="SELECT_ID[]" value="862" onchange="javascript:if (document.getElementById('SELECT_ID_862')) document.getElementById('SELECT_ID_862').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="brow" align="right">862</td>
+  <td class="brow" align="left">Vinařická hora</td>
+  <td class="brow" align="left">Přírodní památka</td>
+  <td class="brow" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="brow" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+ <tr class="brow">
+  <td class="image" width="1px"><a href="http://drusop.nature.cz/ost/chrobjekty/zchru/index.php?frame&amp;SHOW_ONE=1&amp;ID=1759" target="_top"><img src="brow_data/self.gif" title="Podrobné informace o objektu Žraločí zuby" alt="images/self.gif" border="0"></a></td>
+  <td class="image" width="1%"><input id="1759" name="SELECT_ID[]" value="1759" onchange="javascript:if (document.getElementById('SELECT_ID_1759')) document.getElementById('SELECT_ID_1759').value='';CountCheck('');" onclick="this.onchange();" type="checkbox"></td>
+  <td class="browdark" align="right">1759</td>
+  <td class="browdark" align="left">Žraločí zuby</td>
+  <td class="browdark" align="left">Přírodní památka</td>
+  <td class="browdark" align="left"><a href="http://www.kr-stredocesky.cz/" target="_blank" title="http://www.kr-stredocesky.cz">Krajský úřad Středočeského kraje</a> </td>
+  <td class="browdark" align="left"><a href="http://www.nature.cz/" target="_blank" title="http://www.nature.cz">Agentura ochrany přírody a krajiny ČR</a> </td>
+ </tr>
+</tbody></table>
+    <table class="brow_menu" width="99%" border="0" cellspacing="0">
+    <tbody><tr><td class="brow_menu" nowrap="nowrap" width="40%">
+    <span style="margin-left:10px"></span></td><td class="brow_menu" nowrap="nowrap" width="110" align="center">Označené:&nbsp;
+<span id="span_count_selected_bottom">0</span></td><td class="brow_menu">
+<input value="&nbsp;&nbsp;Vyber" title="Vyber" class="button" onclick="javascript:SelectIDSelectedOnly('')" style="background-image:url();background-repeat:no-repeat;background-position:center left" type="button"><input value="&nbsp;&nbsp;Označ/Zruš stránku" title="Označ/Zruš stránku" class="button" onclick="javascript:SelectIDSwitchAll('')" style="background-image:url();background-repeat:no-repeat;background-position:center left" type="button"><input value="&nbsp;&nbsp;Zruš všechna označení" title="Zruš všechna označení" class="button" onclick="javascript:SelectIDUnCheckAll('')" style="background-image:url();background-repeat:no-repeat;background-position:center left" type="button">    </td></tr>
+    </tbody></table>
+    </form>
+
+  <script type="text/javascript">
+  <!--
+    
+    function SelectIDChangeStatus(tablename, status){
+      var frm = document.forms['frm_'+tablename];
+      for (var i=0; i<frm.length; i++)
+        if (frm[i].type == "checkbox") { 
+          frm[i].checked = status;
+          if (frm[i].onchange) frm[i].onchange(); 
+        }   
+      CountCheck(tablename);     
+    }	
+
+    function SelectIDSwitchAll(tablename){
+      var frm = document.forms['frm_'+tablename];
+      var stav=true;
+      for (var i=0; i<frm.length; i++)
+         if (frm[i].type == "checkbox" && frm[i].checked==true) {
+           stav=false;
+           break
+         } 
+      SelectIDChangeStatus(tablename, stav);
+    }
+
+    function SelectIDUnCheckAll(tablename){
+      var frm = document.forms['frm_'+tablename];
+      if (tablename) {
+        var f=document.forms[0];
+        if (typeof(f['SELECT_ID_CHECK_ALL'+tablename]) == 'undefined') {
+          var input = document.createElement('INPUT');
+          input.setAttribute('type', 'hidden');
+          input.setAttribute('name', 'SELECT_ID_CHECK_ALL'+tablename);
+          input.setAttribute('value', 1);
+          f.appendChild(input);
+        } else {
+          f['SELECT_ID_CHECK_ALL'+tablename].value = 1;
+        }
+        f.action = f.action+'#'+tablename;
+        f.submit();
+      } else {
+        SelectIDChangeStatus(tablename, false);
+        frm['SELECT_ID_CHECK_ALL'+tablename].value=1;
+        frm.submit();
+      }
+    }
+    
+    function SelectIDSelectedOnly(tablename){
+      var frm = document.forms['frm_'+tablename];
+      if (tablename) {
+        var f=document.forms[0];
+        if (typeof(f['pagepos'+tablename]) != 'undefined') {
+          f['pagepos'+tablename].value = '';
+        }
+        if (typeof(f['SELECT_ID_USE_FILTER'+tablename]) == 'undefined') {
+          var input = document.createElement('INPUT');
+          input.setAttribute('type', 'hidden');
+          input.setAttribute('name', 'SELECT_ID_USE_FILTER'+tablename);
+          input.setAttribute('value', 1);
+          f.appendChild(input);
+        } else {
+          f['SELECT_ID_USE_FILTER'+tablename].value = 1;
+        }
+        if (f != frm) {
+          for (var i=f.length-1; i>=0; i--){
+             if (unescape(f[i].name)=='SELECT_ID'+tablename+'[]') {
+               f.removeChild(f[i]);
+             }
+          }
+        }
+        var len = frm.length;
+        for (var i=0; i<len; i++){
+           if (frm[i].type == "checkbox" && frm[i].checked==true) {
+             var input = document.createElement('INPUT');
+             input.setAttribute('type', 'hidden');
+             input.setAttribute('name', 'SELECT_ID'+tablename+'[]');
+             input.setAttribute('value', frm[i].value);
+             f.appendChild(input);
+           } 
+           // vybrat oznacene i na jinych strankach
+           // lumo 5.1.2009
+           if (frm[i].type != "checkbox" && unescape(frm[i].name)=='SELECT_ID'+tablename+'[]') {
+             var input = document.createElement('INPUT');
+             input.setAttribute('type', 'hidden');
+             input.setAttribute('name', 'SELECT_ID'+tablename+'[]');
+             input.setAttribute('value', frm[i].value);
+             f.appendChild(input);
+           }
+        }   
+        f.action = f.action+'#'+tablename;
+        f.submit();
+      } else {
+        frm['SELECT_ID_USE_FILTER'+tablename].value=1;
+        frm.pagepos.value="";
+        frm.submit();
+        frm['SELECT_ID_USE_FILTER'+tablename].value=0;
+      }
+    }
+  // -->
+  </script>
+    <script type="text/javascript">
+  <!--
+    var count_selected=0;
+    function CountCheck(tablename){
+      var frm;
+      var str='';
+      var count=0;
+      frm = document.forms['frm_'+tablename];
+      for (var i=0; i<frm.length; i++) {
+        if (frm[i].type == "checkbox" && frm[i].name.indexOf('SELECT_ID') >= 0 && frm[i].checked==true) count++;
+      }
+      count += count_selected;
+      if(count==0){
+        switch (18){
+          case 1: str='vybraný';break;
+          case 2:
+          case 3:
+          case 4: str='vybrané';break;
+          default : str='vybraných';
+        }
+        str='18 '+str;
+      }else{
+        switch (count){
+          case 1: str='označený';break;
+          case 2:
+          case 3:
+          case 4: str='označené';break;
+          default : str='označených';
+        }
+        str=count+' '+str;
+      }
+      if(document.getElementById('span_count_selected_top'+tablename)) document.getElementById('span_count_selected_top'+tablename).innerHTML=str;
+      if(document.getElementById('span_count_selected_bottom'+tablename))document.getElementById('span_count_selected_bottom'+tablename).innerHTML=count;
+    }
+    CountCheck('');
+  -->
+  </script>
+  <div class="OutPutDiv">
+<a href="javascript:RunOut('/ost/chrobjekty/chrob_find/export.php')" class="pages"><img src="brow_data/export.gif" title="Export aktuálního výběru" alt="Tisk" border="0"></a>
+           </div>
+           <script language="JavaScript" type="text/javascript">
+            function RunOut(script){
+              frm=document.frm_;
+              var act = frm.action;
+              var tar = frm.target;
+              frm.SELECT_ID_USE_FILTER.value=1;              frm.action=script;
+              frm.target='_blank';
+              frm.submit();
+              frm.action=act;
+              frm.target=tar;
+              frm.SELECT_ID_USE_FILTER.value=0;            }
+           </script>
+           
+  <font size="2">
+  <span style="font-weight:bold">Legenda barevného označení:</span><br>
+  Objekt v platnosti.<br>
+  <span style="color:gray">Objekt je zrušen.</span><br>
+  <span style="color:green">Objekt je zaniklý.</span><br>
+  </font>
+<script language="JavaScript" type="text/javascript">
+  if(document.getElementById('wait_label')) document.getElementById('wait_label').style.display = 'none';
+  // google analytics
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25888640-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script> 
+
+
+
+</body></html>

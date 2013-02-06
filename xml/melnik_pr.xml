@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="54">
+  <CIS>2454</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Černínovsko</NAZEV>
+ </RECORD>
+ <RECORD id="1706">
+  <CIS>1706</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Dřínovská stráň</NAZEV>
+ </RECORD>
+ <RECORD id="2177">
+  <CIS>2177</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Kelské louky</NAZEV>
+ </RECORD>
+ <RECORD id="179">
+  <CIS>179</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Kokořínský důl</NAZEV>
+ </RECORD>
+ <RECORD id="184">
+  <CIS>184</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Kopeč</NAZEV>
+ </RECORD>
+ <RECORD id="2110">
+  <CIS>2110</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Mokřady dolní Liběchovky</NAZEV>
+ </RECORD>
+ <RECORD id="1803">
+  <CIS>1803</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Mokřady horní Liběchovky</NAZEV>
+ </RECORD>
+ <RECORD id="1027">
+  <CIS>1027</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Slatinná louka u Liblic</NAZEV>
+ </RECORD>
+ <RECORD id="474">
+  <CIS>474</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Úpor</NAZEV>
+ </RECORD>
+ <RECORD id="1025">
+  <CIS>1025</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Všetatská černava</NAZEV>
+ </RECORD>
+</TABLE>

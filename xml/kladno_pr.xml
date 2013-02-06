@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<TABLE>
+ <RECORD id="1051">
+  <CIS>1051</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Pašijová draha</NAZEV>
+ </RECORD>
+ <RECORD id="13019">
+  <CIS>3418</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Údolí Klíčavy</NAZEV>
+ </RECORD>
+ <RECORD id="863">
+  <CIS>863</CIS>
+  <N_KATEGORIE>Přírodní rezervace</N_KATEGORIE>
+  <NAZEV>Záplavy</NAZEV>
+ </RECORD>
+</TABLE>

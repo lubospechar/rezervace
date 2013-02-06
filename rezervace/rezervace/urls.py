@@ -11,6 +11,8 @@ urlpatterns = patterns('',
     url(r'^rezervace/(?P<slug>[-\w]+)/$', 'katalog.views.profil', name='profil'),
     url(r'^chroupy/$', 'katalog.views.chroupy', name='chroupy'),
     url(r'^statistiky/$', 'katalog.views.statistiky', name='statistiky'),
+    url(r'^gpx/rezervace-(?P<id>[-\w]+).gpx$', 'katalog.views.bod', name='bod'),
+    url(r'^mapa-vyber/', 'katalog.views.body', name='body'),
     # url(r'^rezervace/', include('rezervace.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
